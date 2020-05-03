@@ -117,8 +117,4 @@ angular.module('app').controller('NavCtrl', ['$rootScope', '$scope', '$log', '$s
   vm.isMenuItemActive = function(state) {
     return $state.current.name === state || $state.current.name.startsWith(state + '.');
   };
-  
-  vm.openNav = function() {
-    $('.menu-right').toggleClass('right-open');
-  }
 }]);

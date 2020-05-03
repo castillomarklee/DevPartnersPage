@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="21px" viewBox="0 0 32 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>google-plus-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Log-in-form-Copy-9" transform="translate(-1344.000000, -628.000000)" fill-rule="nonzero" fill="#FFFFFF">
+            <g id="Group-11" transform="translate(1113.000000, 610.000000)">
+                <g id="google-plus-icon" transform="translate(230.000000, 18.000000)">
+                    <path d="M11.181,9.294 L11.181,12.788 L16.956,12.788 C16.725,14.288 15.212,17.182 11.181,17.182 C7.706,17.182 4.868,14.301 4.868,10.751 C4.868,7.201 7.706,4.32 11.181,4.32 C13.162,4.32 14.481,5.164 15.237,5.889 L17.999,3.227 C16.224,1.571 13.924,0.565 11.18,0.565 C5.549,0.571 0.999,5.121 0.999,10.753 C0.999,16.385 5.549,20.934 11.18,20.934 C17.055,20.934 20.955,16.803 20.955,10.984 C20.955,10.315 20.88,9.803 20.792,9.296 L11.179,9.296 L11.181,9.294 Z" id="Shape"></path>
+                    <polygon id="Shape" points="33 9 30 9 30 6 27 6 27 9 24 9 24 12 27 12 27 15 30 15 30 12 33 12"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

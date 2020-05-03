@@ -17,10 +17,7 @@
           <img src="assets/img/logos/devpartners-logo.png" alt="devpartners-logo">
         </a>
       <!-- Compact Menu Toggle -->
-      <a href id="c-button--push-right" ng-if="topNavVM.isLoggedIn()" class="compact-menu compact-menu-right c-button hidden-lg hidden-md hidden-sm pull-right" ng-hide="hideNavMenus">
-        <span class="fa fa-bars"></span>
-      </a>
-      <a href ng-click="topNavVM.openNav()" class="compact-menu compact-menu-right c-button hidden-lg hidden-md hidden-sm pull-right" ng-hide="hideNavMenus">
+      <a href id="c-button--push-right" class="compact-menu compact-menu-right c-button hidden-lg hidden-md hidden-sm pull-right" ng-hide="hideNavMenus">
         <span class="fa fa-bars"></span>
       </a>
     </div>
@@ -43,25 +40,10 @@
         <li>
           <a ng-hide="hideNavMenus" ng-click="topNavVM.openModalContactUs()">Contact Us</a>
         </li>
-        <li>
-          <div class="lets-talk-container">
-            <a ng-href="/us/angularjs" ng-hide="hideNavMenus">Lets Talk</a>
-          </div>
-        </li>
+
       </ul>
     </div>
     <!-- /.navbar-collapse -->
   </div>
   <!-- /.container-fluid -->
-</nav>
-
-<nav class="menu menu-right">
-  <a ng-href="/">Home</a>
-  <a href="#">Our Model</a>
-  <a href="#">Our Team</a>
-  <a href="#">Careers</a>
-  <a href="#">Contact</a>
-  <div class="lets-talk-button-container">
-    <button class="lets-talk-button">Let's Talk</button>
-  </div>
 </nav>

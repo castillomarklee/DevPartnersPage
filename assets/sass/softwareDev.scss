@@ -1,0 +1,332 @@
+.software-development {
+    $heroAnimDuration: .25s;
+    $heroEasing: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+    overflow-x: hidden;
+    margin-top: -$top-main-nav-height;
+    background-color: #f7f7f7;
+    padding-bottom: 0 !important;
+
+    h2 {
+        font-size: 36px !important;
+    }
+
+    .pitch-left-align {
+        padding-left: 0;
+        padding-right: 0;
+        h1 {
+            font-size: 45px;
+            margin-top: 100px !important;
+        }
+        p {
+            font-size: 18px;
+            line-height: 27px;
+        }
+        .jumbotron {
+            top: 0;
+            @include transform(none);
+        }
+        #world-goes-round {
+            width: 100%;
+            position: relative;
+            text-align: center;
+            > .animated-svg-container {
+                @include transform(translateX(-15px));
+            }
+        }
+        .text-content-container {
+            text-align: right;
+        }
+        .scroll-slide {
+            right: 25px;
+            h2 {
+                text-align: inherit !important;
+            }
+        }
+
+        @media (max-width: $screen-xs-max) {
+            h1 {
+                font-size: 36px;
+                margin-top: 15px !important;
+                margin-bottom: 15px;
+                padding-top: 15px;
+            }
+            h2 {
+                font-size: 27px !important;
+            }
+            .text-content-container {
+                height: 320px;
+                margin-bottom: -100px;
+            }
+            #world-goes-round {
+                //width: 80%;
+                max-width: 450px;
+                margin-left: auto;
+                margin-right: auto;
+                @include transform(translateY(-20px));
+            }
+            .heroes {
+                padding-left: 0;
+            }
+            #team-callout {
+                margin-left: 0;
+            }
+        }
+        @media (max-width: 558px) {
+            .text-content-container {
+                margin-bottom: 0;
+            }
+            .animated-container {
+                margin-bottom: -40px;
+                svg {
+                    width: 80%;
+                }
+            }
+            h1 {
+                font-size: 18px;
+                font-weight: normal;
+                margin-bottom: 0px;
+            }
+            .list-style-diamond {
+                li {
+                    font-size: 13px;
+                    line-height: 14px;
+                    padding-left: 15px;
+                    &::before {
+                        width: 9px;
+                        height: 9px;
+                        top: 7px;
+                    }
+                }
+            }
+        }
+        @media (max-width: $screen-xs) {
+            #hire-devs {
+                .btn-yellow {
+                    margin-top: 0px !important;
+                }
+            }
+        }
+        @media (max-width: 360px) {
+            #hire-devs {
+                .list-horizontal {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    #team-callout {
+        margin-left: 15px;
+        width: 60px;
+        opacity: 0;
+        @include transform(translateY(-15px) scale(0));
+        @include transitions(all .2s $heroEasing .2s);
+    }
+    .heroes {
+        position: relative;
+        text-align: center;
+        padding-left: 25px;
+        height: 50px;
+        > img {
+            margin: 0 15px;
+            position: absolute;
+            opacity: 0;
+            // heroes initial position
+            @include transform(translate(-48px, 115px) scale(.5) translate3d(0, 0, 0));
+            @include transitions(all $heroAnimDuration $heroEasing);
+            &#hero1 {
+                @include transition-delay(.1s);
+            }
+            &#hero2 {
+                @include transition-delay(.15s);
+            }
+        }
+    }
+
+    #section-featured {
+        position: relative;
+        #section-featured-frame {
+            background: url('../images/services/softwaredev/frame.svg') no-repeat top center;
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            > div {
+                height: 100%;
+                overflow: hidden;
+                @include perspective(1000);
+            }
+        }
+        #section-featured-slider {
+            width: 400%;
+            height: 100%;
+            position: relative;
+            h2 {
+                margin-top: 0px !important;
+                text-align: left !important;
+                padding: 0 !important;
+                text-transform: none;
+                margin-bottom: 15px !important;
+            }
+            .tech-slide {
+                height: 100%;
+                width: 25%; /* relative to parent -> 25% of 400% = 100% of window width */
+                float: left;
+                position: relative;
+                > div {
+                    width: 90%;
+                    max-width: 600px;
+                    top: 15%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    position: absolute;
+                    text-align: left;
+                }
+            }
+            @media (max-width: $screen-md-min) {
+                .tech-slide {
+                    top: 10%;
+                    height: 45%;
+                }
+            }
+            @media (max-width: $screen-sm-min) {
+                .tech-slide {
+                    p {
+                        font-size: 18px;
+                    }
+                }
+            }
+            @media (max-width: 588px) {
+                .logo-container {
+                    width: 170px;
+                    height: 170px;
+                }
+                .avatar {
+                    width: 120px;
+                }
+            }
+            @media (max-width: $screen-xs) {
+                .tech-slide {
+                    top: 5%;
+                    p {
+                        padding: 0;
+                        font-size: 16px;
+                    }
+                }
+                .logo-container {
+                    width: 120px;
+                    height: 120px;
+                }
+                .hero {
+                    min-height: 120px;
+                }
+            }
+        }
+    }
+    .tech-slide {
+        .hero {
+            min-height: 200px;
+        }
+        .logo-container {
+            float: left;
+            height: 200px;
+            width: 200px;
+            position: relative;
+            background-color: white;
+            border: 1px solid $generic-border-color;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            img {
+                padding: 10px;
+            }
+        }
+        .hero {
+            .avatar {
+                display: block;
+                margin-bottom: 15px;
+            }
+        }
+        p {
+            max-width: 800px;
+            font-size: 23px;
+            font-weight: 300;
+            padding: 15px 0;
+            color: #525252;
+        }
+    }
+
+    @media (max-width: $screen-sm) {
+        .btn {
+            padding: 10px;
+            min-width: initial;
+        }
+    }
+
+    // animations
+    #Cloud-double-Group-19,
+    #Cloud-double-Group-19-Copy,
+    #Cloud,
+    #Satellite01 {
+        @include transform-origin-1(50% 50%);
+    }
+    #Cog {
+        @include transform-origin-1(131px 113px);
+        @include transitions(transform 3s linear);
+        @include transform(rotate(0deg));
+        &.animate {
+            @include transform(rotate(360deg));
+        }
+    }
+    #Project-Progress {
+        @include transitions(stroke-dashoffset 3s linear);
+        &.animate {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    #team.animate {
+        .heroes .avatar {
+            opacity: 1;
+        }
+        #hero0 {
+            @include transform(translate(-110px, 25px) scale(1) translate3d(0, 0, 0));
+        }
+        #hero1 {
+            @include transform(translate(-45px, 0px) scale(1) translate3d(0, 0, 0));
+        }
+        #hero2 {
+            @include transform(translate(20px, 25px) scale(1) translate3d(0, 0, 0));
+        }
+        #team-callout {
+            opacity: 1;
+            @include transform(translateY(-10px) scale(1));
+        }
+    }
+
+    #Satellite01, #Product1 {
+        @include transitions(opacity .6s ease);
+        &.fade-out {
+            opacity: 0;
+        }
+    }
+
+    .scroll-slide, .sub-animation {
+        opacity: 0;
+        visibility: hidden;
+        @include transitions(all .6s ease);
+    }
+    .scroll-slide {
+        position: absolute;
+        &.animate, .sub-animation.animate {
+            visibility: visible;
+            opacity: 1;
+        }
+        h2 {
+            margin-top: 0px !important;
+            text-align: left !important;
+            padding: 0 !important;
+            text-transform: none;
+            margin-bottom: 15px !important;
+        }
+
+    }
+}

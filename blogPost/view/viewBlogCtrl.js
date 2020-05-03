@@ -24,10 +24,10 @@ angular.module('app').controller('ViewBlogCtrl', ['$location', 'BlogEntries', 'B
 
             vm.sortOrders = [{
                     name: "Newest to Oldest",
-                    value: "asc"
+                    value: "desc"
                 }, {
                     name: "Oldest to Newest",
-                    value: "desc"
+                    value: "asc"
                 }
             ];
 

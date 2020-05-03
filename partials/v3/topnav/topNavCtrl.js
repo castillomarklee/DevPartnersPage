@@ -16,8 +16,6 @@ angular.module('app').controller('NavCtrl', ['$rootScope', '$scope', '$log', '$s
     vm.logo = toState.data ? toState.data.logo : 'light';
   });
 
-  console.log('this controller is called');
-
   vm.initSidebar = function() {
     if (sidebarInitialized) return;
     $log.debug('initSidebar: ' + sidebarInitialized);
