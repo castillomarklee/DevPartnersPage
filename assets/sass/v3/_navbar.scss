@@ -1,0 +1,102 @@
+// Styling for the navbar
+#mainNav {
+  background-color: $white;
+  .navbar-toggler {
+    font-size: 12px;
+    right: 0;
+    padding: 13px;
+    text-transform: uppercase;
+    color: white;
+    border: 0;
+    background-color: $primary;
+    @include heading-font;
+  }
+  .navbar-brand {
+    padding-top: 5px;
+    color: $primary;
+    @include script-font;
+    &.active,
+    &:active,
+    &:focus,
+    &:hover {
+      color: darken($primary, 10%);
+    }
+    img{
+      height: 40px;
+    }
+  }
+  .navbar-nav {
+    padding-top: 5px;
+    li {
+      a {
+        font-size: 90%;
+        font-weight: 400;
+        padding: 0.75em 0.75em;
+        letter-spacing: 1px;
+        color: #212121;
+        @include heading-font;
+        &.active,
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+@media(min-width:992px) {
+  #mainNav {
+    padding-top: 15px;
+    padding-bottom: 6px;
+    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+    -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+    border: none;
+    background-color: $white;
+    .navbar-brand {
+      padding-top: 2px;
+      font-size: 1.75em;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+      img{
+        width: 174px;
+        height: auto;
+      }
+    }
+    .navbar-nav {
+      padding-top: 0px;
+      li {
+        a {
+          font-size: 15px;
+          padding: 1.1em 1.75em !important;
+        }
+        .lets-talk-container{
+          cursor: pointer;
+          background: #FFFFFF;
+          border: 1px solid #F8B63E;
+          border-radius: 5px;
+          height: 100%;
+          padding: 11px;
+          a {
+            font-family: 'InterUI-Medium';
+            font-size: 13px;
+            color: #F8B63E;
+            text-align: center;
+          }
+        }
+      }
+    }
+    &.navbar-shrink {
+      padding-top: 0;
+      padding-bottom: 0;
+      background-color: $white;
+      .navbar-brand {
+        font-size: 1.25em;
+        padding: 8px 0;
+        img{
+          height: 40px;
+        }
+      }
+    }
+  }
+}

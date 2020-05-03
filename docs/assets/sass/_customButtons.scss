@@ -1,0 +1,316 @@
+/* buttons */
+.btn {
+  font-size: $font-size-base;
+  padding: $padding-large-vertical $padding-large-horizontal;
+  .fa {
+    margin-right: 5px;
+  }
+  &.text-light {
+    color: white;
+  }
+  &.btn-sm {
+    padding: 5px 10px;
+  }
+}
+.btn-yellow, .btn-black, .btn-facebook, .btn-gplus, .btn-dropdown {
+  text-transform: uppercase;
+  color: $black;
+  width: auto;
+  min-width: 215px;
+  white-space: normal;
+  @include border-radius($border-radius-base);
+  background-color: $yellow-gold;
+  border: 1px solid $yellow-gold-hovered;
+  @include box-shadow-o(0 1px 1px 0px rgba(0, 0, 0, .3));
+}
+.btn-yellow:hover, .btn-yellow:focus {
+  background-color: $yellow-gold-hovered;
+}
+.btn-black {
+  color: white !important;
+  background-color: $black;
+  border-color: black;
+}
+.btn-black:hover, .btn-black:focus {
+  background-color: black;
+  color: white !important;
+}
+.btn-outline {
+  text-transform: uppercase;
+  padding: $padding-large-vertical $padding-xl-horizontal;
+  border: 1px solid $black;
+  @include border-radius($border-radius-small);
+  vertical-align: middle;
+  font-weight: bold;
+  color: $black;
+  &::before {
+    content: "\f178";
+    font-family: FontAwesome;
+    vertical-align: middle;
+    margin-right: $padding-xs-horizontal;
+  }
+  &:hover {
+    color: $black;
+  }
+}
+.btn-outline-yellow {
+  @extend .btn-outline;
+  border-color: $yellow-gold;
+  color: $yellow-gold;
+  &:hover {
+    color: $yellow-gold;
+  }
+}
+.btn-scroll-down {
+  color: $yellow-gold;
+  padding: 20px;
+  &::before {
+    content: '\f175';
+    font-family: FontAwesome;
+  }
+}
+
+.btn-facebook {
+  background-color: $facebook-color;
+  margin-right: 10px;
+  color: #fff;
+  border: none;
+  &:hover, &:focus {
+    background-color: darken($facebook-color, 7%);
+    color: #fff;
+  }
+  i.fa {margin-right: 5px;}
+}
+.btn-gplus {
+  background-color: $gplus-color;
+  padding: 15px;
+  color: #fff;
+  cursor: pointer;
+  border-color: darken($gplus-color, 7%);
+  &:hover, &:focus {
+    background-color: darken($gplus-color, 7%);
+    color: #fff;
+  }
+  i.fa {margin-right: 5px;}
+}
+.btn-large {
+  padding: 1.7em 2em !important;
+  font-size: 1.2em;
+  width: auto;
+  min-width: 300px;
+  margin: .5em 0;
+}
+.btn-small {
+  padding: 7px 10px !important;
+  width: auto;
+  min-width: 50px;
+}
+.btn-xsmall {
+  padding: 2px 10px;
+  margin-left: 10px;
+}
+.btn-sm {
+  padding: 10px 15px !important;
+}
+.btn-dropdown {
+  @include border-radius(0px);
+  width: 50px;
+  min-width: 0;
+  height: 100%;
+  font-size: $font-size-large;
+  padding: 4px;
+}
+.btn-info:active, .btn-info.active, .open > .btn-info.dropdown-toggle {
+  color: $black !important;
+  background-color: $yellow-gold-hovered !important;
+  border-color: $yellow-gold-hovered !important;
+}
+.btn-cta {
+  display: inline;
+  background-color: #3a3a3a;
+  padding: 6px 10px;
+  color: #fff !important;
+  border-radius: 12px;
+  @include transition(all $trans-duration ease);
+  &:hover {
+    background-color: #1d1d1d;
+    color: #fff !important;
+  }
+}
+.btn-cta-bright {
+  @extend .btn-cta;
+  background-color: $yellow-gold;
+  color: $black;
+  &:hover {
+    background-color: $yellow-gold-hovered;
+    color: $black !important;
+  }
+}
+.btn-icon, .btn-icon-yellow {
+  padding: 4px 8px;
+  position: relative;
+}
+.btn-icon-yellow {
+  background: $yellow-gold;
+  color: white;
+  font-size: 25px;
+}
+.btn-link {
+  font-weight: bold;
+  color: $yellow-gold !important;
+  font-size: 16px;
+  // > .fa {
+  //   margin-right: 10px;
+  //   font-size: smaller;
+  // }
+}
+.btn-like {
+  color: #5B5B5B;
+  font-size: 14px;
+  .fa {
+    font-size: 18px;
+    color: black;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+  &.active {
+    .fa {
+      color: $yellow-gold;
+    }
+  }
+}
+.btn-previous {
+    background-color: black;
+    @include border-radius(0);
+    color: $yellow-gold;
+    font-weight: bold;
+    padding-left: 50px;
+    padding-right: 50px;
+    &::before {
+      content: '\f177';
+      font-family: FontAwesome;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+}
+.btn-next {
+    background-color: $yellow-gold;
+    @include border-radius(0);
+    color: black;
+    font-weight: bold;
+    padding-left: 50px;
+    padding-right: 50px;
+    &::before {
+      content: '\f178';
+      font-family: FontAwesome;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+}
+.btn-share-lg {
+  text-align: center;
+  width: 73px;
+  height: 59px;
+  padding: 0;
+  &::before {
+    color: white;
+    font-family: FontAwesome;
+    font-size: 26px;
+    display: block;
+  }
+
+  &.fb {
+    background-color: $facebook-color;
+    &::before {
+      content: '\f09a';
+    }
+  }
+  &.twitter {
+    background-color: $twitter-color;
+    &::before {
+      content: '\f099';
+    }
+  }
+  &.linkedIn {
+    background-color: $linkedIn-color;
+    &::before {
+      content: '\f0e1';
+    }
+  }
+  &.email {
+    background-color: $email-color;
+    &::before {
+      content: '\f0e0';
+    }
+  }
+}
+
+.btn-group {
+    width: 100%;
+    border-radius: 2px;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .title {
+        padding: $padding-small-vertical $padding-base-vertical;
+        width: 100%;
+        text-align: left;
+    }
+    .toggle {
+        color: $yellow-gold;
+        font-size: 20px;
+        line-height: normal;
+        vertical-align: middle;
+        width: 40px;
+        height: 100%;
+        float: right;
+        padding: 5px;
+        text-align: center;
+        border-left: 1px solid $generic-border-color;
+    }
+}
+
+.btn-next-vertical {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    @include transform(translateX(-50%));
+    color: $yellow-gold;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    &::after {
+      content: '\f078';
+      font-family: 'FontAwesome';
+      font-weight: normal;
+      font-size: 18px;
+      display: block;
+      margin-top: -5px;
+    }
+}
+
+@media (max-width: 540px) {
+  .btn-outline, .btn-outline-yellow {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .btn-large {
+    padding: 1em 2.5em !important;
+    min-width: inherit;
+  }
+}
+@media (max-width: 320px) {
+  .btn-large {
+    padding: .80em 1.5em !important;
+  }
+}
+@media (max-width: 270px) {
+ .btn-large {
+    padding: .80em 1em !important;
+  }
+}

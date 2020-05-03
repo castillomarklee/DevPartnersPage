@@ -1,0 +1,267 @@
+.uiux-design {
+    overflow-x: hidden;
+    padding-bottom: 0 !important;
+    .pitch-left-align {
+        margin-top: -$top-main-nav-height;
+        background: $gray-dark url('../images/services/uiux/cover-img-m.jpg') no-repeat center center;
+        background-size: cover;
+        height: auto !important;
+        .jumbotron {
+            top: 0;
+            left: initial;
+            @include transform(none);
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+        .avatar {
+            width: 100px;
+        }
+        .header-animation {
+            width: 250px;
+            margin-right: auto;
+            margin-left: auto;
+            float: none;
+            object {
+                width: 100%;
+            }
+        }
+    }
+    .section-logo {
+        position: relative;
+        height: 260px;
+        margin-bottom: -50px;
+        overflow: hidden;
+        .svg-container {
+            width: 410px;
+            max-width: 100%;
+            margin-right: 0 !important;
+            margin-left: 0 !important;
+            position: absolute;
+            &.wider {
+                width: 340px;
+            }
+            > svg {
+                width: 100%;
+                margin-top: -100px;
+            }
+        }
+    }
+    .section-description {
+        .section-title, p {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+        .section-title {
+            text-align: inherit !important;
+            text-transform: none;
+            margin-top: 75px !important;
+            margin-bottom: 25px !important;
+        }
+    }
+    section {
+        $cast-shadow-width: 110px;
+        padding-bottom: 0 !important;
+        padding-left: 0;
+        padding-right: 0;
+
+        .container-fluid {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .row-fluid {
+            padding-top: 60px;
+            padding-bottom: 60px;
+            &:nth-of-type(odd) {
+                .section-logo {
+                    .svg-container {
+                        @include transform(translateX(25%));
+                        @include calc(right, '50% - 205px');
+                        &.wider {
+                            @include calc(right, '50% - 145px');
+                        }
+                    }
+                }
+            }
+            &:nth-of-type(even) {
+                background-color: #F7F7F7;
+                .section-logo {
+                    .svg-container {
+                        @include transform(translateX(-25%));
+                        @include calc(left, '50% - 205px');
+                        &.wider {
+                            @include calc(left, '50% - 165px');
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (min-width: $screen-xs) {
+        .pitch-left-align {
+            .avatar {
+                width: 140px;
+            }
+        }
+    }
+    @media (min-width: 540px) and (min-height: 540px) {
+        .pitch-left-align {
+            height: 100vh !important;
+            .jumbotron {
+                top: 50%;
+                left: 50%;
+                @include transform(translate(-50%, -50%));
+                width: 100%;
+                position: absolute;
+            }
+        }
+    }
+    @media (min-width: $screen-sm) {
+        overflow: hidden;
+        .pitch-left-align {
+            background: $gray-dark url('../images/services/uiux/cover-img.jpg') no-repeat center center;
+            background-size: cover;
+            p {
+                max-width: 800px !important;
+            }
+            .avatar {
+                width: 220px;
+            }
+            .header-animation {
+                float: left;
+                margin-right: 15px;
+            }
+        }
+        section {
+            .row-fluid, .row-fluid > div {
+                position: relative;
+                height: 740px;
+            }
+            .row-fluid {
+                padding-top: 100px;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: cover;
+                &:nth-of-type(1) {
+                    background-image: url('../images/services/uiux/bg1.jpg');
+                }
+                &:nth-of-type(2) {
+                    background-image: url('../images/services/uiux/bg2.jpg');
+                }
+                &:nth-of-type(3) {
+                    background-image: url('../images/services/uiux/bg3.jpg');
+                }
+                &:nth-of-type(4) {
+                    background-image: url('../images/services/uiux/bg4.jpg');
+                }
+
+                &:nth-of-type(odd) {
+                    .section-logo {
+                        .svg-container {
+                            left: 20px;
+                            right: inherit;
+                        }
+                    }
+                    .section-description {
+                        .horizontal-border {
+                            left: -50px;
+                        }
+                        .vertical-border {
+                            left: 0;
+                        }
+
+                        .section-title, .main-description, .heroes, .btn-yellow {
+                            margin-left: 40px !important;
+                        }
+                    }
+                }
+                &:nth-of-type(even) {
+                    .section-logo {
+                        .svg-container {
+                            right: 20px;
+                            left: inherit;
+                        }
+                    }
+                    .section-description {
+                        text-align: right;
+                        .horizontal-border {
+                            right: -50px;
+                        }
+                        .vertical-border {
+                            right: 0;
+                        }
+
+                        .section-title, .main-description, .heroes {
+                            margin-right: 40px !important;
+                        }
+                    }
+                }
+
+                .section-logo {
+                    position: initial;
+                    height: 50%;
+                    margin-bottom: 0;
+                    .svg-container {
+                        width: 70%;
+                        max-width: 768px;
+                        transform: none !important;
+                        > svg {
+                            margin-top: 0;
+                        }
+                    }
+                }
+                .section-description {
+                    .horizontal-border, .vertical-border {
+                        position: absolute;
+                        background-repeat: no-repeat, no-repeat, no-repeat;
+                        opacity: 0;
+                    }
+                    .horizontal-border {
+                        width: 17px;
+                        height: 20px;
+                        top: 40px;
+                        border-top: 1px solid transparent;
+                        background-position: center left, center right, top;
+                        background-image: url('../images/services/uiux/circle-o.svg'), url('../images/services/uiux/circle-o.svg'),
+                        -webkit-linear-gradient(bottom , transparent 49%, #D9D9D9 50%, transparent 51%);
+                        background-image: url('../images/services/uiux/circle-o.svg'), url('../images/services/uiux/circle-o.svg'),
+                        -moz-linear-gradient(bottom , transparent 49%, #D9D9D9 50%, transparent 51%);
+                        background-image: url('../images/services/uiux/circle-o.svg'), url('../images/services/uiux/circle-o.svg'),
+                        -o-linear-gradient(bottom , transparent 49%, #D9D9D9 50%, transparent 51%);
+                        background-image: url('../images/services/uiux/circle-o.svg'), url('../images/services/uiux/circle-o.svg'),
+                        linear-gradient(bottom , transparent 49%, #D9D9D9 50%, transparent 51%);
+                        @include transitions(opacity .6s ease, width .8s ease .6s);
+                        &.animate {
+                            opacity: 1;
+                            width: 320px;
+                        }
+                    }
+                    .vertical-border {
+                        width: 20px;
+                        height: 17px;
+                        top: -15px;
+                        border-left: 1px solid transparent;
+                        background-position: center top, center bottom;
+                        background-image: url('../images/services/uiux/circle-o.svg'), url('../images/services/uiux/circle-o.svg'),
+                        -webkit-linear-gradient(180deg , transparent 45%, #D9D9D9 50%, transparent 55%);
+                        @include transitions(opacity .6s ease, height .8s ease .6s);
+                        &.animate {
+                            opacity: 1;
+                            height: 320px;
+                        }
+                    }
+                    .main-description {
+                        max-width: 417px;
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+    @media (min-width: $screen-md) {
+        section {
+            .row-fluid {
+                padding-top: 180px;
+            }
+        }
+    }
+}

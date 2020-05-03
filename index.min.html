@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="app" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="app" class="no-js"> <!--<![endif]-->
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MPZNMTR');</script>
+    <!-- End Google Tag Manager -->
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <base href="/">
+  <title>Dev Partners</title>
+  <meta name="description" content="Your Remote Resources Partner: Technology Staffing Agency">
+
+  <link rel="shortcut icon" href="/favicon.png?v=2" type="image/png">
+  <link rel="icon" href="/favicon.png?v=2" type="image/png">
+  <link rel="stylesheet" type="text/css" href="bower_components/please-wait/build/please-wait.css">
+  <link rel="stylesheet" type="text/css" href="assets/stylesheets/preloader.css" />
+  <link rel="stylesheet" type="text/css" href="assets/stylesheets/app.min.css?v=@@buildVersion" />
+  
+  <script src="https://apis.google.com/js/api:client.js" async defer></script>
+</head>
+
+<body id="light" ng-controller="MainCtrl as mainVM">
+
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPZNMTR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+  <div ui-view id="main-container" class="{{$state.current.data ? $state.current.data.mainContainerClasses : ''}}"></div>
+
+  <!-- Pre loader -->
+  <script type="text/javascript" src="bower_components/please-wait/build/please-wait.min.js"></script>
+  <script type="text/javascript">
+    window.loading_screen = window.pleaseWait({
+      logo: "assets/images/logo-yellow-lg.svg",
+      backgroundColor: '#111',
+      loadingHtml: '<div class="pre-spinner"><div class="cube1"></div><div  class="cube2"></div></div>'
+    });
+  </script>
+  <script src="assets/js/app.min.js?v=@@buildVersion"></script>
+  <script src="https://use.fontawesome.com/d654b2a23c.js" async defer></script>
+</body>
+
+
+</html>

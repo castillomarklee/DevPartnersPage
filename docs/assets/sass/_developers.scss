@@ -1,0 +1,151 @@
+.developers {
+    padding: 0;
+    .container {
+        width: 100%;
+    }
+    .talent {
+        padding: 50px !important;
+        .featured-talents {
+            padding: 0 !important;
+            padding-bottom: 25px !important;
+            @media(max-width: $screen-md) {
+                .team {
+                    padding-top: 15px !important;
+                }
+            }
+            .member-details:not(.photo) {
+                text-align: left;
+                @media(max-width: $screen-md) {
+                    text-align: center;
+                }
+                .btn {
+                    margin: 15px 0px !important;
+                }
+            }
+        }
+        .featured-talents-profile {
+            .striped div {
+                padding-bottom: 5px;
+            }
+            .talent-profile {
+                margin-bottom: 15px;
+            }
+        }
+        .testimonials {
+            margin-top: 15px;
+        }
+    }
+    #services {
+        background-color: #f3f3f3;
+        .row {
+            margin: 0;
+            margin-top: 40px;
+        }
+        h2 {
+            text-align: center;
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-top: 40px;
+            font-size: 30px;
+        }
+        .services-main-content>div {
+            padding-bottom: 30px;
+        }
+        .service {
+            height: 100%;
+            img {
+                width: 100%;
+                border-radius: 3px;
+            }
+            .jumbotron {
+                background-color: #fff;
+                padding: 15px;
+                .details-container {
+                    .heading {
+                        font-size: 25px;
+                    }
+                    p {
+                        font-weight: 500;
+                    }
+                    .hero p {
+                        font-weight: 300;
+                    }
+                    .btn-yellow {
+                        color: #fff;
+                        width: 100%;
+                        min-width: 0;
+                    }
+                }
+            }
+        }
+        @media(max-width: $screen-md) {
+            .row {
+                margin-top: 30px;
+            }
+            .service {
+                img {
+                    width: 50%;
+                    margin: 0 auto;
+                }
+                .details-container {
+                    .heading {
+                        font-size: 30px;
+                    }
+                    .btn-yellow {
+                        max-width: 215px;
+                    }
+                }
+            }
+        }
+        @media(min-width: $screen-md) {
+            .service {
+                .jumbotron.col-md-3 {
+                    width: 23%;
+                    margin-left: 2%;
+                    height: 100vh;
+                    max-height: 650px;
+                    min-height: 550px;
+                }
+            }
+        }
+        @media(min-width: $screen-lg) {
+            .service {
+                .btn-yellow {
+                    max-width: 215px;
+                }
+            }
+        }
+    }
+}
+
+@-moz-document url-prefix() {
+    .developers {
+        @media(min-width: $screen-md) {
+            #services .service {
+                .jumbotron.col-md-3 {
+                    height: 90vh;
+                }
+            }
+        }
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio: 0) {
+    .developers {
+        @media(min-width: $screen-md) {
+            #services .service {
+                .jumbotron.col-md-3 {
+                    height: 90vh;
+                }
+            }
+        }
+    }
+}
+
+.developers#featured-post {
+    margin: 0;
+    padding: 15px;
+    ul li {
+        list-style-type: none;
+    }
+}

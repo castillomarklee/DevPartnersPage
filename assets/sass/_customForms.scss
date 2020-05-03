@@ -1,0 +1,510 @@
+/* forms */
+
+$input-border-color: $gray-light;
+form {
+  font-size: $font-size-base;
+  .form-group {
+    text-align: left;
+    margin-bottom: 20px;
+    .ng-message {
+      margin-top: 0;
+    }
+  }
+  .ng-message {
+    margin-top: -20px;
+    color: $panel-danger-text;
+    position: absolute;
+  }
+  .ng-message-position-relative {
+    margin-top: .5em;
+    color: $panel-danger-text;
+    position: relative;
+    .messages {
+      >div {
+        width: auto;
+        display: inline-block;
+      }
+    }
+  }
+  .alert {
+    display: inline-block;
+    width: 100%;
+  }
+  .bootstrap-select {
+    width: 100% !important;
+    position: relative;
+    margin-bottom: 20px;
+    .dropdown-toggle {
+      width: 100%;
+      position: relative;
+      padding: 10px;
+      background: transparent;
+      border-radius: 0;
+      z-index: auto;
+      line-height: 24px;
+    }
+  }
+  h2 {
+    margin-top: 0;
+  }
+  label {
+    // margin-top: 20px;
+    .spinner {
+      position: relative;
+      display: inline-block;
+      margin-left: 5px;
+      margin-bottom: 5px;
+    }
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="number"],
+  select,
+  textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    // border: 1px solid $input-border-color;
+    background: transparent; // @include border-radius(0);
+    outline: none !important;
+    @include disable-box-shadow();
+    // margin-bottom: 20px;
+    color: $gray;
+    &.embossed {
+      height: 60px;
+      font-size: 18px;
+      @include border-radius(3px !important);
+      @include box-shadow-o(0px 1px 2px 1px rgba(0, 0, 0, .1) !important);
+    }
+  }
+  select {
+    text-transform: uppercase;
+  }
+  textarea {
+    resize: none;
+  }
+  textarea {
+    height: 200px;
+  }
+  button.submit {
+    display: block;
+    margin: 2em auto 0 auto;
+  }
+  button .spinner {
+    position: relative;
+    display: block;
+    top: 10px;
+    bottom: 0;
+  }
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  ::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: $gray-light;
+  }
+  :-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: $gray-light;
+    opacity: 1;
+  }
+  ::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: $gray-light;
+    opacity: 1;
+  }
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $gray-light;
+  }
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $gray-light;
+  }
+  .input-text-select {
+    clear: left;
+    .input-group-btn {
+      height: 100%;
+      .bootstrap-select {
+        padding: 0 !important;
+        .dropdown-toggle {
+          width: 100px;
+          padding-top: 10px !important;
+          padding-bottom: 10px !important;
+          background-color: $yellow-gold !important;
+          .caret {
+            right: 1em !important;
+          }
+        }
+      }
+    }
+    input[type=text] {
+      padding: 10px;
+    }
+  }
+  .uib-timepicker {
+    .uib-decrement a,
+    .uib-increment a {
+      color: $yellow-gold;
+      padding: 5px;
+    }
+    .uib-time {
+      >button {
+        margin-left: .5em;
+        padding-top: .8em;
+        padding-bottom: .8em;
+      }
+      >input[type=text] {
+        padding: 0 0 !important;
+        height: 46px;
+        margin-bottom: 0;
+      }
+    }
+    @media(min-width: $screen-md) {
+      margin-top: -34px;
+    }
+  }
+  .submit-btn-container {
+    min-height: 100px;
+    max-width: 610px;
+    margin: 1.5em auto;
+    #submit-btn {
+      display: inline;
+    }
+    .captcha-container {
+      display: inline; // margin-top: 1.5em;
+      margin-left: 0;
+      margin-right: 0; // width: auto;
+    }
+  }
+  .action-btn-section-align-left {
+    text-align: right;
+    padding: 0 10px 10px 10px;
+    .btn {
+      margin-bottom: .5em;
+      margin-top: 0;
+    }
+    .btn,
+    .captcha-container {
+      display: inline-block;
+    }
+    .btn-small {
+      padding: 10px !important;
+      margin-top: 1.5em;
+    }
+    .captcha-container {
+      margin: 0 0 0 0;
+      padding: 0;
+      top: 2.5em;
+    }
+    @media(max-width: 677px) {
+      .btn,
+      .captcha-container {
+        display: inline-block; // float: none !important;
+        top: 0;
+      }
+      .btn-small {
+        margin-top: 3.5em;
+      }
+      .captcha-container {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        >div>div {
+          @include transform-origin(center, center);
+        }
+      }
+      text-align: center;
+    }
+    @media (max-width: 400px) {
+      .captcha-container {
+        margin-left: -1em !important;
+      }
+    }
+    @media (max-width: 270px) {
+      .captcha-container {
+        margin-left: -5em !important;
+      }
+    }
+  }
+  .action-btn-section-align-right {
+    text-align: right;
+    .btn {
+      margin-bottom: 15px;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+  }
+  /* external dropdown toggles */
+  .external-datetimepicker-toggle:hover,
+  .external-datetimepicker-toggle:focus,
+  .external-select-toggle:hover,
+  .external-select-toggle:focus {
+    background-color: $yellow-gold-hovered;
+  }
+  .external-select-toggle {
+    position: absolute;
+    top: 47%;
+    right: 1.3%;
+    font-size: 2em;
+    padding: .63em;
+    background-color: #FCD307;
+    border: 0px;
+    z-index: 999;
+  }
+  .drop-box {
+    border: 1px dashed $input-border-color;
+    width: 100%;
+    height: 300px;
+    display: table;
+    position: relative;
+    margin-top: 15px;
+    >div {
+      margin: 0;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      cursor: pointer;
+      .fa {
+        font-size: 2em;
+        margin-bottom: 16px;
+      }
+      @media (max-width: 767px) {
+        padding: 0 1.5em;
+      }
+    }
+    .preview {
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: auto;
+      background-color: #fff;
+    }
+  }
+  .square-drop-box {
+    width: $min-width;
+    height: $min-width;
+    display: block;
+    margin-top: 0;
+    position: relative;
+    border: solid 1px #ccc;
+    cursor: pointer;
+    >div {
+      margin: 0;
+      display: block;
+      position: absolute;
+      top: 100px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      .fa {
+        font-size: 2em;
+        margin-bottom: 16px;
+      }
+    }
+    .preview {
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      background-color: #fff;
+    }
+  }
+  .cropArea {
+    width: $min-width;
+    height: $min-width;
+  }
+  .img-caption {
+    width: 100%;
+    color: $gray;
+    font-size: smaller;
+    text-align: center;
+    border: none !important;
+    &:focus {
+      border: none !important;
+      @include disable-box-shadow();
+    }
+  }
+  .content-editor {
+    padding-top: 3em;
+    padding-bottom: $padding-large-vertical;
+  }
+  .checkbox {
+    label {
+      margin-top: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+input:hover,
+input:focus,
+select:hover,
+select:focus {
+  outline: none !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.dropdown-toggle:focus {
+  @include box-shadow-inset(0px, 0px, 1px, 1px, $yellow-gold-hovered !important);
+  border: solid 1px $yellow-gold-hovered !important;
+}
+
+.input-field-compact {
+  width: 100%;
+  border: 1px solid #a7a7a7;
+  @include border-radius(3px);
+  padding: 6px;
+  margin-top: 4px;
+}
+
+.caret {
+  border: none;
+  &::after {
+    content: '\f078';
+    font-family: FontAwesome;
+    color: $yellow-gold;
+    float: right;
+    margin-top: -8px;
+    font-size: 12px;
+    margin-right: -5px;
+  }
+}
+
+.input-group {
+  z-index: 0;
+  .btn-icon {
+    padding: 0 !important;
+    height: 42px;
+    width: 40px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+    img {
+      height: 30px;
+    }
+  }
+  .ng-message {
+    bottom: -25px;
+    margin-bottom: 0;
+    left: 0;
+  }
+}
+
+.datetimepicker-field {
+  position: relative;
+  input[type="text"] {
+    padding: 10px;
+    display: inline-block;
+    &:hover,
+    &:focus {
+      outline: none !important;
+      @include box-shadow-inset(0px, 0px, 1px, 1px, $yellow-gold-hovered !important);
+      border: solid 1px $yellow-gold-hovered !important;
+    }
+  }
+  .caret {
+    position: absolute;
+    top: 18px;
+    right: 50px;
+  }
+  .external-datetimepicker-toggle {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 16px;
+    padding: 11px;
+    background-color: $yellow-gold;
+    border: 0px;
+  }
+  .uib-separator {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  &.compact {
+    input {
+      padding: 5px;
+      border: 1px solid;
+    }
+    .caret {
+      top: 13px;
+      right: 35px;
+    }
+    button {
+      font-size: 14px;
+      padding: 6px 6px;
+    }
+  }
+}
+
+.datetimepicker-wrapper {
+  display: block;
+  input {
+    padding: 10px;
+    box-shadow: none !important;
+  }
+}
+
+.uib-datepicker {
+  table {
+    outline: none !important;
+    thead {
+      th {
+        font-weight: normal !important;
+      }
+    }
+  }
+  button {
+    border: 0;
+    background: inherit;
+    color: $black;
+  }
+}
+
+.tags {
+  .input {
+    width: auto !important;
+    border: none !important;
+    display: inline-block;
+    padding: 0 5px;
+  }
+  .tag-list {
+    width: auto;
+    display: inline-block;
+    .tag-item {
+      display: inline-block;
+      padding-left: 5px;
+      padding-right: 5px;
+      margin: 5px 5px 0;
+      font-size: 14px;
+      color: $gray-dark;
+      background-color: #eee;
+      border: 1px solid #ddd;
+    }
+  }
+}
+
+.compact {
+  font-size: 14px;
+}
+
+label.compact {
+  padding-right: 5px;
+}

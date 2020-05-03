@@ -1,0 +1,235 @@
+.ourTeam-v3 {
+    background-color: white;
+    width: 100%;
+    margin-top: -40px;
+    .ourTeam-banner {
+        background-image: url('../images/why/2.png');
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+        margin-top: 25px;
+        height: 40vh;
+        position: relative;
+        display: table;
+        width: 100%;
+        h1{         
+            text-align: right;
+            color: #FFBB41;
+            padding-right: 6%;
+            padding-bottom: 2%;
+            line-height: 0.8;
+            // display: table-cell;
+            // vertical-align: bottom;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-size: 64px;
+            text-transform: none;
+            span{
+                color: #191919;
+                font-size: 64px
+            }
+            label{
+                color: #191919;
+                font-size: 32px;
+            }
+        }
+    }
+    .container {
+        text-align: center;
+        .about-label {
+            font-size: 34px;
+            color: black;
+            label {
+                font-size: 34px;
+                color: #FFBB41;
+            }
+        }
+        p {
+            margin-top: 25px;
+            font-size: 20px;
+            line-height: 1.4;
+        }
+    }
+    #developers-v3 {
+        background: rgb(242, 233, 216);
+        height: auto;
+        width: 100%;
+        // padding: 50px !important;
+        .inner-developer {
+            width: 100%;
+            .about-label {
+                font-size: 34px;
+                color: black;
+                label {
+                    font-size: 34px;
+                    color: #FFBB41;
+                }
+            }
+            ul {
+                list-style: none;
+            }
+            .talent-profile {
+                border-bottom: solid 1.5px #e1cca1;
+                padding: 25px 0px 25px 25px;
+            }
+            // .talent-profile {
+            //     // margin: 45px;
+            // }
+        }
+        .featured-talents {
+            // padding: 0 !important;
+            // padding-bottom: 25px !important;
+            // @media(max-width: $screen-md) {
+            //     .team {
+            //         padding-top: 15px !important;
+            //     }
+            // }
+            .member-details:not(.photo) {
+                text-align: left;
+                @media(max-width: $screen-md) {
+                    text-align: center;
+                }
+                .btn {
+                    margin: 15px 0px !important;
+                }
+            }
+        }
+        .featured-talents-profile {
+            .talent-profile {
+                margin-bottom: 30px;
+            }
+            .featured-talents-profile {
+                text-align: center;
+            }
+            .position {
+                color: #545454;
+                font-size: 15px;
+            }
+        }
+        @media (max-width:360px) {
+            #hire-devs {
+                .list-horizontal {
+                    display: none;
+                }
+            }
+        }
+    }
+    #expertise-v3 {
+        .scroll-technologies {
+            cursor: ew-resize;
+            max-width: 100vw;
+            width: 100vw;
+            margin-top: 2%;
+            .row {
+                // overflow-x: auto;
+                white-space: nowrap; //   .well {
+                //     width: 260px;
+                //     height: 260px;
+                //     display: inline-block;
+                //     float: none;
+                //     margin: 0 15px;
+                //     padding-top: 80px;
+                //   }
+                .slick-slide img {
+                    display: inline;
+                }
+                .well {
+                    width: 260px !important;
+                    height: 260px;
+                    margin: 0 20px;
+                    display: inline-block;
+                    text-align: center;
+                    line-height: 220px;
+                    .well-inner {
+                        // display: flex;
+                        // justify-content: center;
+                        img {
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+            .slick-dots{
+       
+                li{
+                  button{
+                    &:before{
+                      margin-top: 50px;
+                      color: $primary;
+                      font-size: 12px;
+                    }
+                  }
+                  &.slick-active{
+                    button{
+                      &:before{
+                        color: black;
+                        opacity: 1;
+                      }
+                    }
+                  }
+                } 
+              }
+        }
+        .about-label {
+            font-size: 34px;
+            color: black;
+            label {
+                font-size: 34px;
+                color: #FFBB41;
+            }
+        }
+        .expertise-platforms {
+            margin-top: 3%;
+        }
+        p {
+            margin-top: 2%;
+            font-size: 20px;
+            line-height: 1.4;
+        }
+    }
+}
+
+@media (max-width: 1267px){
+    .ourTeam-v3{
+        .ourTeam-banner{
+            h1{
+                line-height: 1.2;
+                font-size: 54px !important;
+                span{
+                    font-size: 54px !important;
+                }
+                label{
+                    font-size: 27px !important;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .ourTeam-v3{
+        .ourTeam-banner{
+            h1{
+                line-height: 1.2;
+                font-size: 40px !important;
+                span{
+                    font-size: 40px !important;
+                }
+                label{
+                    font-size: 20px !important;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 992px){
+    .ourTeam-v3{
+        margin-top: 15px;
+        .ourTeam-banner{
+            background-position: top center;
+            height: 450px;
+        }
+    }
+}
