@@ -1,181 +1,34 @@
-<footer id="footer" class="footer" data-ng-init="footerNavVM.init()" state-footer-class>
-  <div class="logo-footer constraints">
-    <a ui-sref="{{STATES.HOME}}" ng-if="!footerNavVM.isHomePage">
-      <img src="assets/img/logos/devpartners-logo-footer.png?v=1" class="img-responsive logo" />
-    </a>
-    <a du-smooth-scroll='main-container' ng-if="footerNavVM.isHomePage">
-      <img src="assets/img/logos/devpartners-logo-footer.png?v=1" class="img-responsive logo" />
-    </a>
-    <a du-smooth-scroll="main-content" class="btn-scroll-top hidden-md hidden-lg">
-      <span class="fa fa-long-arrow-up"></span>
-      TOP
-    </a>
-  </div>
-  <nav ng-show="hideNavMenus" class="constraints" ng-controller="FooterNavDisplayCtlr as navDisplayVM" id="plain-code" style="padding-left:15px;">
-    <div class="container-fluid">
-      <div>
-        <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
-          <center><label class="hidden-xs">CONTACT</label></center>
-          <a class="hidden-lg hidden-md hidden-sm section-toggle" href ng-click="navDisplayVM.socialExpanded = !navDisplayVM.socialExpanded"
-            ng-class="{'expanded': navDisplayVM.socialExpanded}">
-            <label>CONTACT</label>
-          </a>
-
-          <div ng-show="navDisplayVM.socialExpanded" class="collapsible-content">
-            <div class="row hidden-xs">
-                <ul id="other-contacts">
-                  <li class="pull-left">
-                    <address>
-                      <img class="flag" src="assets/flags/us.png" alt="US" />
-                      <div>
-                        <span class="address-name">Steven Bustin:</span>
-                        <br>
-                        <a href class="address-others">
-                          <span>+1 415 310 1207</span>
-                        </a>
-                        <br>
-                        <a href="mailto:steven@devpartners.co" class="address-others">
-                          <span></span>steven@devpartners.co</a>
-                        <div class="address-others"> US Sales Office, San Francisco,
-                          <br>California, USA </div>
-                      </div>
-                    </address>
-                  </li>
-                  <li class="pull-right">
-                    <address>
-                      <img class="flag" src="assets/flags/ph.png" alt="US" />
-                      <div>
-                        <span class="address-name">Roland Votacion:</span>
-                        <br>
-                        <a href class="address-others">
-                          <span>+63 933 378 5250</span>
-                        </a>
-                        <br>
-                        <a href="mailto:roland@devpartners.co" class="address-others">
-                          <span>roland@devpartners.co</span>
-                        </a>
-                        <div class="address-others"> PH Sales Office, Davao City,
-                          <br>Davao del Sur, Philippines </div>
-                      </div>
-                    </address>
-                  </li>
-                </ul>
+<footer id="footer" class="footer footer-background" data-ng-init="footerNavVM.init()" state-footer-class>
+  <div class="container">
+    <div ng-controller="FooterNavDisplayCtlr as navDisplayVM">
+      <div class="recent-post-container desktop-footer">
+        <p class="title">Recent Posts</p>
+        <div class="grid-container">
+          <div class="flex-container" ng-show="navDisplayVM.connectExpanded" ng-repeat="x in navDisplayVM.myBlogs">
+            <div class="flex-box-one">
+              <img src="{{x.coverImg}}" class="img-responsive cover-image">
             </div>
-            <div class="hidden-sm hidden-md hidden-lg" style="margin-left:10px">
-                <ul id="other-contacts">
-                  <li>
-                    <address>
-                      <img class="flag" src="assets/flags/us.png" alt="US" />
-                      <div>
-                        <span class="address-name">Steven Bustin:</span>
-                        <br>
-                        <a href class="address-others">
-                          <span>+1 415 310 1207</span>
-                        </a>
-                        <br>
-                        <a href="mailto:steven@devpartners.co" class="address-others">
-                          <span></span>steven@devpartners.co</a>
-                        <div class="address-others"> US Sales Office, San Francisco,
-                          <br>California, USA </div>
-                      </div>
-                    </address>
-                  </li>
-                  <li>
-                    <address>
-                      <img class="flag" src="assets/flags/ph.png" alt="US" />
-                      <div>
-                        <span class="address-name">Roland Votacion:</span>
-                        <br>
-                        <a href class="address-others">
-                          <span>+63 933 378 5250</span>
-                        </a>
-                        <br>
-                        <a href="mailto:roland@devpartners.co" class="address-others">
-                          <span>roland@devpartners.co</span>
-                        </a>
-                        <div class="address-others"> PH Sales Office, Davao City,
-                          <br>Davao del Sur, Philippines </div>
-                      </div>
-                    </address>
-                  </li>
-                </ul>
+            <div class="flex-box-two">
+              <p class="blogTitle title-footer">
+                <strong>{{x.title}}</strong>
+              </p>
+              <p class="blogContent text-muted content content-footer">{{x.subTitle}}
+                <br>
+                <a class="text-primary" ui-sref="public.viewBlogPost({postId:x.id})" href="{{x.content}}">Read More</a>
+              </p>
             </div>
-            <!-- <div class="col-md-offset-3 col-md-6"> -->
-              <center style="margin-top:25px;">
-                  <ul class="list-horizontal social-media-links">
-                    <li>
-                      <a href="https://www.linkedin.com/company/devpartnerssoftwaresolutions" target="_blank">
-                        <i class="fa fa-linkedin-square fa-2x link"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://www.facebook.com/DevPartnersPH/" target="_blank">
-                        <i class="fa fa-facebook-square fa-2x link"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://twitter.com/DevPartnersPH" target="_blank">
-                        <i class="fa fa-twitter-square fa-2x link"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://www.youtube.com/channel/UC504fH6kn-vOztZozrnQwvQ" target="_blank">
-                        <i class="fa fa-youtube-square fa-2x link"></i>
-                      </a>
-                    </li>
-                  </ul>
-              </center>
-            <!-- </div> -->
           </div>
         </div>
       </div>
-    </div>
-    <hr>
-  </nav>
-  <nav ng-hide="hideNavMenus" class="constraints" ng-controller="FooterNavDisplayCtlr as navDisplayVM" id="plain-code">
-    <div class="container-fluid">
-      <div class="row">
-        <!-- About Menu -->
-        <div class="col-md-3 col-lg-3">
-          <label class="hidden-xs hidden-sm">CATEGORIES</label>
-          <a class="hidden-lg hidden-md section-toggle" href ng-click="navDisplayVM.aboutExpanded = !navDisplayVM.aboutExpanded" ng-class="{'expanded': navDisplayVM.aboutExpanded}">
-            <label>CATEGORIES</label>
-          </a>
-
-          <ul class="list-type-long-arrow collapsible-content" ng-show="navDisplayVM.aboutExpanded">
-            <li>
-              <a ui-sref="{{STATES.OUR_PEOPLE}}"> Our Team </a>
-            </li>
-            <li>
-              <a ui-sref='{{STATES.DEVELOPERS}}'> Our Process </a>
-            </li>
-            <li>
-              <a ui-sref='{{STATES.WHY}}'> Why </a>
-            </li>
-            <li>
-              <a ui-sref="{{STATES.BLOG}}"> Blog </a>
-            </li>
-            <li>
-              <a  ng-click="footerNavVM.openModalContactUs();"> Contact Us </a>
-            </li>
-            <!-- <li>
-              <a ui-sref={{STATES.POOLING}} target="_blank"> Join Us </a>
-            </li> -->
-          </ul>
-        </div>
-        <!-- Connect Section -->
-        <div class="col-md-6 col-lg-6">
-          <label class="hidden-xs hidden-sm">RECENT POSTS</label>
-          <a class="hidden-lg hidden-md section-toggle" href ng-click="navDisplayVM.connectExpanded = !navDisplayVM.connectExpanded"
-            ng-class="{'expanded': navDisplayVM.connectExpanded}">
-            <label>RECENT POSTS</label>
-          </a>
-          <div ng-show="navDisplayVM.connectExpanded" class="row collapsible-content" ng-repeat="x in navDisplayVM.myBlogs">
-            <div class="col-md-12 blog-item">
+      <div class="footer-mobile-container">
+        <div class="recent-post-container">
+          <p class="recent-post-title">Recent Posts</p>
+          <div class="row" ng-repeat="x in navDisplayVM.myBlogs">
+            <div class="col-md-12 blog-item blog-item-mobile">
               <div class="blog-img-holder">
                 <img src="{{x.coverImg}}" class="img-responsive">
               </div>
-              <div class="blog-content">
+              <div class="blog-content blog-content-mobile">
                 <p class="blogTitle">
                   <strong>{{x.title}}</strong>
                 </p>
@@ -186,88 +39,141 @@
               </div>
             </div>
           </div>
-          <!-- <subscription-form ng-show="navDisplayVM.connectExpanded" class="collapsible-content"></subscription-form> -->
         </div>
-        <!-- Social Section -->
-        <div class="col-md-3 col-lg-3">
-          <label class="hidden-xs hidden-sm">CONTACT</label>
-          <a class="hidden-lg hidden-md section-toggle" href ng-click="navDisplayVM.socialExpanded = !navDisplayVM.socialExpanded"
-            ng-class="{'expanded': navDisplayVM.socialExpanded}">
-            <label>SOCIAL</label>
-          </a>
-
-          <div ng-show="navDisplayVM.socialExpanded" class="collapsible-content">
-            <ul id="other-contacts">
-              <li>
-                <address>
-                  <img class="flag" src="assets/flags/us.png" alt="US" />
-                  <div>
-                    <span class="address-name">Steven Bustin:</span>
-                    <br>
-                    <a href class="address-others">
-                      <span>+1 415 310 1207</span>
-                    </a>
-                    <br>
-                    <a href="mailto:steven@devpartners.co" class="address-others">
-                      <span></span>steven@devpartners.co</a>
-                    <div class="address-others"> US Sales Office, San Francisco,
-                      <br>California, USA </div>
+      </div>
+      <hr class="footer-divider" />
+      <div class="content-container">
+        <div class="flex-container">
+          <div class="flex-box-one">
+            <p class="navigation-title">Sitemap</p>
+            <div class="navigation-list">
+              <p><a ui-sref="{{STATES.OUR_PEOPLE}}">Our Team</a></p>
+              <p><a ui-sref='{{STATES.DEVELOPERS}}'>Our Process</a></p>
+              <p><a ui-sref='{{STATES.WHY}}'>Why</a></p>
+              <p><a ui-sref="{{STATES.BLOG}}">Blog</a></p>
+              <p><a ng-click="footerNavVM.openModalContactUs();">Contact Us</a></p>
+            </div>
+          </div>
+          <div class="flex-box-two">
+            <p class="information-title">
+              Let's Talk
+            </p>
+            <p class="information-title-mobile">
+              Get In Touch
+            </p>
+            <button class="schedule-chat-button">Schedule a chat</button>
+            <div class="contact-container">
+              <p class="contact-title desktop-footer">Or phone us:</p>
+              <div class="contact-flex-container desktop-footer">
+                <div class="contact-flex-box">
+                  <div class="flex-container">
+                    <div class="flex-box-one">
+                      <img class="flag" src="assets/flags/us.png" alt="US" />
+                    </div>
+                    <div class="flex-box-two">
+                      <p class="contact-person">Steve Bustin: <span class="contact-number">+1 800 590 9338</span></p>
+                      <p class="contact-address">US Sales Office, San Francisco, CA USA</p>
+                    </div>
                   </div>
-                </address>
-              </li>
-              <br>
-              <li>
-                <address>
-                  <img class="flag" src="assets/flags/ph.png" alt="US" />
-                  <div>
-                    <span class="address-name">Roland Votacion:</span>
-                    <br>
-                    <a href class="address-others">
-                      <span>+63 933 378 5250</span>
-                    </a>
-                    <br>
-                    <a href="mailto:roland@devpartners.co" class="address-others">
-                      <span>roland@devpartners.co</span>
-                    </a>
-                    <div class="address-others"> PH Sales Office, Davao City,
-                      <br>Davao del Sur, Philippines </div>
+                </div>
+                <div class="contact-flex-box">
+                  <div class="flex-container">
+                    <div class="flex-box-one">
+                      <img class="flag" src="assets/flags/ph.png" alt="US" />
+                    </div>
+                    <div class="flex-box-two">
+                      <p class="contact-person">Roland Votacion - <span class="contact-number">63 191 10101 11</span></p>
+                      <p class="contact-address">PH Sales Office, Davao City, Philippines</p>
+                    </div>
                   </div>
-                </address>
-              </li>
-            </ul>
-
-            <ul class="list-horizontal social-media-links">
-              <li>
-                <a href="https://www.linkedin.com/company/devpartnerssoftwaresolutions" target="_blank">
-                  <i class="fa fa-linkedin-square link"></i>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.facebook.com/DevPartnersPH/" target="_blank">
-                  <i class="fa fa-facebook-square link"></i>
-                </a>
-              </li>
-              <li>
-                <a href="https://twitter.com/DevPartnersPH" target="_blank">
-                  <i class="fa fa-twitter-square link"></i>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.youtube.com/channel/UC504fH6kn-vOztZozrnQwvQ" target="_blank">
-                  <i class="fa fa-youtube-square link"></i>
-                </a>
-              </li>
-            </ul>
+                </div>
+              </div>
+              <div class="mobile-footer">
+                <div class="contact-flex-box">
+                  <div class="flex-container">
+                    <div class="flex-box-one-info">
+                      <img class="flag" src="assets/flags/us.png" alt="US" />
+                    </div>
+                    <div class="flex-box-two">
+                      <p class="contact-person">Steve Bustin: +1 800 590 9338/ steven@devpartners.co</p>
+                      <p class="contact-address">US Sales Office, San Francisco, CA USA</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="contact-flex-box">
+                  <div class="flex-container">
+                    <div class="flex-box-one-info">
+                      <img class="flag" src="assets/flags/ph.png" alt="US" />
+                    </div>
+                    <div class="flex-box-two">
+                      <p class="contact-person">sales@devpartners.co</p>
+                      <p class="contact-address">PH Sales Office, Davao City, Philippines</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <div class="company-brand">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="company-name"> &copy; Copyright 2017 Dev Partners Philippines, Inc.</p>
+          </div>
+          <div class="col-md-6">
+            <div class="pull-right logos-desktop">
+              <ul class="list-horizontal social-media-links">
+                <li>
+                  <a class="company-social" href="https://www.linkedin.com/company/devpartnerssoftwaresolutions" target="_blank">
+                    <i class="fa fa-linkedin-square link"></i>
+                  </a>
+                </li>
+                <li>
+                  <a class="company-social" href="https://www.facebook.com/DevPartnersPH/" target="_blank">
+                    <i class="fa fa-facebook-square link"></i>
+                  </a>
+                </li>
+                <li>
+                  <a class="company-social" href="https://twitter.com/DevPartnersPH" target="_blank">
+                    <i class="fa fa-twitter-square link"></i>
+                  </a>
+                </li>
+                <li>
+                  <a class="company-social" href="https://www.youtube.com/channel/UC504fH6kn-vOztZozrnQwvQ" target="_blank">
+                    <i class="fa fa-youtube-square link"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="logos-mobile">
+              <ul class="list-horizontal social-media-links">
+                <li>
+                  <a class="company-social" href="https://www.linkedin.com/company/devpartnerssoftwaresolutions" target="_blank">
+                    <i class="fa fa-linkedin-square link"></i>
+                  </a>
+                </li>
+                <li>
+                  <a class="company-social" href="https://www.facebook.com/DevPartnersPH/" target="_blank">
+                    <i class="fa fa-facebook-square link"></i>
+                  </a>
+                </li>
+                <li>
+                  <a class="company-social" href="https://twitter.com/DevPartnersPH" target="_blank">
+                    <i class="fa fa-twitter-square link"></i>
+                  </a>
+                </li>
+                <li>
+                  <a class="company-social" href="https://www.youtube.com/channel/UC504fH6kn-vOztZozrnQwvQ" target="_blank">
+                    <i class="fa fa-youtube-square link"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <hr>
-  </nav>
-  <div class="info constraints">
-    <div class="text-center-align">
-      &copy; Copyright 2017 Dev Partners Philippines, Inc.
-    </div>
   </div>
-
 </footer>

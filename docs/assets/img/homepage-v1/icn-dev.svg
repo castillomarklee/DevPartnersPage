@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>icn-dev</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#242845" offset="0%"></stop>
+            <stop stop-color="#554479" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="49.9919885%" x2="100%" y2="50.0080115%" id="linearGradient-2">
+            <stop stop-color="#242845" offset="0%"></stop>
+            <stop stop-color="#554479" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="49.6527778%" x2="100%" y2="50.3472222%" id="linearGradient-3">
+            <stop stop-color="#242845" offset="0%"></stop>
+            <stop stop-color="#554479" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#242845" offset="0%"></stop>
+            <stop stop-color="#554479" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="37.5%" y1="0%" x2="62.5%" y2="100%" id="linearGradient-5">
+            <stop stop-color="#242845" offset="0%"></stop>
+            <stop stop-color="#554479" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="43.8276612%" y1="0%" x2="56.1723388%" y2="100%" id="linearGradient-6">
+            <stop stop-color="#242845" offset="0%"></stop>
+            <stop stop-color="#554479" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-550.000000, -1741.000000)">
+            <g id="icn-dev" transform="translate(551.000000, 1742.000000)">
+                <g id="Group">
+                    <path d="M47.7073171,43.0243902 C47.7073171,45.6105366 45.6105366,47.7073171 43.0243902,47.7073171 L4.97560976,47.7073171 C2.38946341,47.7073171 0.292682927,45.6105366 0.292682927,43.0243902 L0.292682927,4.97560976 C0.292682927,2.38946341 2.38946341,0.292682927 4.97560976,0.292682927 L43.0243902,0.292682927 C45.6105366,0.292682927 47.7073171,2.38946341 47.7073171,4.97560976 L47.7073171,43.0243902 Z" id="Path" stroke="url(#linearGradient-1)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M1.17073171,9.65853659 L47.4146341,9.65853659" id="Path" stroke="url(#linearGradient-2)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M5.85365854,4.97560976 L12.8780488,4.97560976" id="Path" stroke="url(#linearGradient-3)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <circle id="Oval" fill="url(#linearGradient-4)" cx="30.5853659" cy="4.97560976" r="1.42595122"></circle>
+                    <circle id="Oval" fill="url(#linearGradient-4)" cx="36.4390244" cy="4.97560976" r="1.42595122"></circle>
+                    <circle id="Oval" fill="url(#linearGradient-4)" cx="42.2926829" cy="4.97560976" r="1.42595122"></circle>
+                </g>
+                <g id="Group" transform="translate(9.951220, 21.073171)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4">
+                    <polyline id="Path" stroke="url(#linearGradient-5)" points="6.20253659 11.4046829 0.56897561 5.77112195 6.20253659 0.137560976"></polyline>
+                    <polyline id="Path" stroke="url(#linearGradient-5)" points="21.8950244 11.4046829 27.5285854 5.77112195 21.8950244 0.137560976"></polyline>
+                    <path d="M15.5742439,0.188487805 L11.651122,11.3543415" id="Path" stroke="url(#linearGradient-6)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
