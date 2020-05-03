@@ -1,0 +1,1 @@
+"use strict";angular.module("app").controller("LandingCtrl",["$scope","$location","$rootScope","$timeout",function($scope,$location,$rootScope,$timeout){$rootScope.hideNavMenus=!0,$rootScope.$on("$stateChangeSuccess",function(){$rootScope.hideNavMenus=!1})}]);

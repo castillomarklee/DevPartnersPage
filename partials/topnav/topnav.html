@@ -1,0 +1,66 @@
+<div class="top-nav" state-top-nav-class>
+  <!-- contact links -->
+  <div class="contact-links hidden-xs hidden-sm">
+    <div>
+      <ul>
+        <li>
+          <a href><img src="assets/flags/ph.png?v=1" alt="PH" class="flag" /><i class="fa fa-phone"></i> <span> {{topNavVM.contactNumber}} </span>
+          </a>
+        </li>
+        <li>
+          <a href><img src="assets/flags/us.png" alt="US" class="flag" /><i class="fa fa-phone"></i>  <span> +1 415 310 1207 </span>
+          </a>
+        </li>
+        <li>
+          <a href="{{'mailto:' + topNavVM.emailAddr}}">
+            <span class="fa fa-envelope-o"></span><span> {{topNavVM.emailAddr}} </span>
+          </a>
+        </li>
+        <li>
+          <span>
+            <span class="fa fa-angle-double-right"></span>
+            Refer &amp; Earn $100!
+          </span>
+          <a ui-sref="{{STATES.REFERRAL}}">
+            <span class="text-emphasize">&nbsp;REGISTER NOW!</span>
+          </a>
+        </li>
+    </div>
+  </div>
+	<nav elem-ready="topNavVM.initSidebar()">
+    <!-- Logo -->
+    <a ui-sref="{{STATES.HOME}}" ng-if="!topNavVM.isHomePage" class="logo logo-adjust-top">
+      <div>
+        <img src="assets/images/logo-gold.png?v=1" alt="Dev Partners"  />
+        <div class="logo-text">Dev Partners</div>
+      </div>
+    </a>
+	  <a du-smooth-scroll='main-container' ng-if="topNavVM.isHomePage" class="logo logo-adjust-top">
+      <div>
+        <img src="assets/images/logo-gold.png?v=1" alt="Dev Partners" />
+        <div class="logo-text">Dev Partners</div>
+      </div>
+    </a>
+    <!-- Menu -->
+	  <ul id="main-top-menu" class="hidden-sm hidden-xs">
+      <!-- Services -->
+      <!-- <li ng-class="{'active': topNavVM.isMenuItemActive(STATES.SERVICES)}"> <a ui-sref="{{STATES.SERVICES}}"> Services </a></li> -->
+      <!-- Our People -->
+      <li ng-class="{'active': topNavVM.isMenuItemActive(STATES.OUR_PEOPLE)}"> <a ui-sref="{{STATES.OUR_PEOPLE}}"> Our People </a> </li>
+      <!-- Developers -->
+      <li ng-class="{'active': topNavVM.isMenuItemActive(STATES.DEVELOPERS)}"> <a ui-sref="{{STATES.DEVELOPERS}}"> Developers </a> </li>
+      <!-- Why -->
+      <li ng-class="{'active': topNavVM.isMenuItemActive(STATES.WHY)}"> <a ui-sref="{{STATES.WHY}}"> Why </a> </li>
+      <!-- Blog -->
+      <li ng-class="{'active': topNavVM.isMenuItemActive(STATES.BLOG)}"> <a ui-sref="{{STATES.BLOG}}"> Blog </a> </li>
+      <li ng-class="{'active': topNavVM.isMenuItemActive(STATES.GET_STARTED)}" class="iconed"> <a hire-people> <img src="assets/images/Tag-icon.svg" class="icon" />Hire Now </a> </li>
+      <!-- Contact Us: home -->
+      <li ng-if="topNavVM.isHomePage" class="iconed"> <a du-smooth-scroll="contact-us-container"> <img src="assets/images/Contact-icon.svg" class="icon">Contact </a> </li>
+      <!-- Contact Us: modal -->
+	    <li ng-if="!topNavVM.isHomePage" class="iconed"> <a ng-click="topNavVM.openModalContactUs()"> <img src="assets/images/Contact-icon.svg" class="icon">Contact </a> </li>
+	    <li class="iconed"> <a ui-sref="{{STATES.LOGIN}}"> <img src="assets/images/login-icon.svg" class="icon" />Log In </a> </li>
+	  </ul>
+    <!-- Compact Menu Toggle -->
+    <a href id="c-button--push-right" class="compact-menu compact-menu-right c-button hidden-lg hidden-md pull-right"><span class="fa fa-bars"></span></a>
+	</nav>
+</div>

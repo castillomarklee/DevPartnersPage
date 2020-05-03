@@ -1,0 +1,44 @@
+<!-- Compact Menu -->
+<aside id="c-menu--push-right" class="c-menu hidden-lg hidden-md c-menu--push-right" elem-ready="sidebarNavVM.setSidebarMenuObserver('right')">
+  <nav>
+    <h4 class="o-header c-menu__close"><img src="assets/images/logo-black.png" /> <i class="fa fa-chevron-right"></i> </h4>
+    <ul class="c-menu__items" elem-ready="sidebarNavVM.initSidebar()" >
+      <li ng-show="sidebarNavVM.isHomePage" class="c-menu__item">
+        <a du-smooth-scroll='main-content' class="c-menu__link c-menu__close">Home</a>
+      </li>
+      <li ng-show="!sidebarNavVM.isHomePage" class="c-menu__item">
+        <a ui-sref="{{STATES.HOME}}" class="c-menu__link c-menu__close">Home</a>
+      </li>
+      <!-- <li class="c-menu__item">
+        <a ui-sref="{{STATES.SERVICES}}" class="c-menu__link c-menu__close"> Services </a>
+      </li> -->
+      <li class="c-menu__item">
+        <a ui-sref="{{STATES.OUR_PEOPLE}}" class="c-menu__link c-menu__close">Our Team</a>
+      </li>
+      <li class="c-menu__item">
+        <a ui-sref="{{STATES.DEVELOPERS}}" class="c-menu__link c-menu__close">Our Process</a>
+      </li>
+      <li class="c-menu__item">
+        <a ui-sref="{{STATES.WHY}}" class="c-menu__link c-menu__close">Why</a>
+      </li>
+      <li class="c-menu__item">
+        <a ui-sref="{{STATES.BLOG}}" class="c-menu__link c-menu__close">Blog</a>
+      </li>
+      <!-- <li class="c-menu__item">
+        <a hire-people class="c-menu__link c-menu__close">Hire Now</a>
+      </li> -->
+      <li class="c-menu__item" ng-show="sidebarNavVM.isHomePage">
+        <a du-smooth-scroll='contact-info' class="c-menu__link c-menu__close">Contact Us</a>
+      </li>
+      <li class="c-menu__item" ng-show="!sidebarNavVM.isHomePage">
+        <a href ng-click="openContactUs()" class="c-menu__link c-menu__close">Contact Us</a>
+      </li>
+      <!-- <li class="emphasize c-menu__item">
+        <a ui-sref="{{STATES.LOGIN}}" class="c-menu__link c-menu__close">Log In</a>
+      </li> -->
+      <!-- <li class="emphasize c-menu__item">
+        <a ui-sref="{{STATES.REFERRAL}}" class="c-menu__link c-menu__close">Refer</a>
+      </li> -->
+    </ul>
+  </nav>
+</aside>

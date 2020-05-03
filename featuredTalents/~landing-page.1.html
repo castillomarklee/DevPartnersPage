@@ -1,0 +1,98 @@
+<div class="talent border-db-bottom">
+    <!-- Featured Talent -->
+    <h2>Meet one of our experts</h2>
+    <ng-include src="vm.isMobile() ?  'featuredTalents/m-layout.html' : 'featuredTalents/layout.html'" include-replace></ng-include>    
+</div>
+<div class="border-db-bottom average-cost">
+    <!-- Average costings -->
+    <h2 class="center-block" text-emphasize="vm.content.averageCosting.headingHighlight">{{::vm.content.averageCosting.heading}}</h2>
+    <p class="main-description">
+        {{::vm.content.averageCosting.description}}
+    </p>
+    <p class="main-description">
+        <img src="assets/images/credit-card.svg" class="to-left" /> {{::vm.content.averageCosting.savings}}
+    </p>
+    <button class="btn btn-yellow text-bold center-block spaced-vertical" hire-people="{{vm.getAdCode()}}" g-analytics-track-event="{category: 'Get Started With Us Button', action: ANALYTICS.ACTION_CLICK, label: vm.eventLabel}">GET STARTED WITH US</button>
+</div>
+<!-- What makes us experts -->
+<build-process class="bordered-diamond-bottom constraints" section-title="What makes our people experts in what they do."></build-process>
+
+<div class="project" ng-if="vm.content.project">
+    <!-- Project -->
+    <h2>{{::vm.content.project.heading}}</h2>
+    <img ng-src="{{::vm.content.project.logo}}" class="img-responsive company-logo" />
+    <p text-bold="vm.content.project.highlights">{{::vm.content.project.description}}</p>
+</div>
+
+<featured-core-services class="spaced-vertical"></featured-core-services>
+
+<div class="container-fluid constraints">
+    <div class="row contact-info">
+        <div class="contact col-xs-12 col-sm-6">
+            <!-- Contact Person -->
+            <div class="media">
+                <div class="media-left">
+                    <img class="media-object" ng-src="{{::vm.content.contactPerson.avatar}}" />
+                </div>
+                <div class="media-body">
+                    <p class="main-description" text-bold="[vm.content.contactPerson.name]" ng-repeat="p in vm.content.contactPerson.description track by $index">{{::p}}</p>
+                    <div>
+                        <a href="mailto:{{::vm.content.contactPerson.email}}" class="text-bold link">
+                        <span class="fa fa-envelope-o"></span>
+                        {{::vm.content.contactPerson.email}}
+                    </a>
+                    </div>
+                    <div class="text-bold" ng-if="vm.content.contactPerson.contactNum">
+                        <span class="fa fa-phone"></span> {{::vm.content.contactPerson.contactNum}}
+                    </div>
+                    <div class="text-italic">
+                        <span class="fa fa-map-marker"></span> {{::vm.content.contactPerson.location}}
+                    </div>
+                    <a class="btn btn-yellow text-bold spaced-vertical"
+                         hire-people="{{getAdCode()}}"
+                        g-analytics-track-event="{category: 'Inquire Now Button', action: ANALYTICS.ACTION_CLICK, label: vm.eventLabel}">Inquire Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="map col-xs-12 col-sm-6">
+            <!-- Map -->
+            <div class="img-center-cropped-fill-parent-portrait">
+                <img ng-src="{{::vm.content.contactPerson.mapsUrl}}" />
+            </div>
+        </div>
+    </div>
+    <div class="row location">
+        <!-- Location -->
+        <h2>Dev Partner Offices</h2>
+        <div class="col-xs-12 col-sm-6" ng-repeat="office in vm.offices track by $index">
+            <div class="row">
+                <div class="col-sm-12" ng-class="{'img-center-cropped-fill-parent-portrait': !vm.isScreenSM(), 'img-center-cropped-fill-parent-landscape': vm.isScreenSM()}">
+                    <!-- Map -->
+                    <img ng-src="{{::office.mapsUrl}}" />
+                    <!-- Address & Contact Info -->
+                    <div class="content-left-overlay">
+                        <h3 class="location-name"> {{::office.name}} </h3>
+                        <address>
+                            <div class="description-sm">{{::office.address}}</div>
+                            <div class="description-sm">{{::office.contactNum}}</div>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid constraints">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 spaced-vertical">
+                <button type="button" class="btn btn-yellow text-bold" ng-click="openContactUs()" g-analytics-track-event="{category: 'Contact Us Button', action: ANALYTICS.ACTION_CLICK, label: vm.eventLabel}">CONTACT US</button>
+            </div>
+            <div class="col-xs-12 col-sm-6 spaced-vertical">
+                <button type="button" class="btn btn-yellow text-bold" hire-people="{{vm.getAdCode()}}" g-analytics-track-event="{category: 'Hire a Developer Now Button', action: ANALYTICS.ACTION_CLICK, label: vm.eventLabel}">HIRE DEVELOPER NOW</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="featured-post" class="row" ng-if="vm.hasFeaturedPost">
+    <ng-include src="'blogPost/view/view-post.html'" ng-controller="LandingPageCtrl as postVM"></ng-include>
+</div>
