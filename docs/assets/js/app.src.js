@@ -47434,7 +47434,7 @@ app.config([
     app.value = $provide.value;
 
     //Google Analytics Config
-    AnalyticsProvider.setAccount('UA-99050591-1');
+    AnalyticsProvider.setAccount('UA-99049353-1');
     AnalyticsProvider.trackPages(true);
     AnalyticsProvider.trackUrlParams(true);
     AnalyticsProvider.ignoreFirstPageLoad(true);
@@ -47517,7 +47517,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
                 },
                 responseError: function (response) {
                     var url = response.config.url;
-                    if (url.indexOf('devpartners.co/api/') != -1 && (response.status === 401 || (ResponseValidator.isErrorResponseValid(response) && response.data.error.status == 401))) {
+                    if (url.indexOf('devpartners-qatest.co/api/') != -1 && (response.status === 401 || (ResponseValidator.isErrorResponseValid(response) && response.data.error.status == 401))) {
                         var AccountService = $injector.get('AccountService');
                         AccountService.clearSession();
                         $location.path('/user-login');
@@ -48714,8 +48714,8 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
     }]);
 'use strict';
 
-app.constant('MAPS_KEY', 'AIzaSyBKIjq4wazGjA26VYCkp65gQKBVhTH1qpk');
-app.constant('FB_ID', '1726686277341827');
+app.constant('MAPS_KEY', 'AIzaSyCm54MkUCpoh8NAcNI_-SItoWUpqmXq4EQ');
+app.constant('FB_ID', '1944147862525290');
 app.constant('JS_REQUIRES', {
   scripts: {
     //*** Javascript plugins
@@ -48956,14 +48956,14 @@ app.constant('JS_REQUIRES', {
   ]
 });
 app.constant('API', {
-  // END_POINT: '/api',
+  END_POINT: '/api',
   // END_POINT: 'http://13.75.89.123:8082/api',
-  END_POINT: 'https://devpartners.co/api',
+  // END_POINT: 'https://devpartners.co/api',
   HOST: '/',
   TOKEN_NAME: 'XSRF-TOKEN',
   TOKEN_NAME_KEY: 'tokenName',
-  Y_CLIENT: 'dj0yJmk9UnQ4U2lpSUxBRkx4JmQ9WVdrOVdYQm9UMFEyTjJrbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD05Mw--',
-  Y_REDIRECT: 'https://devpartners.co'
+  Y_CLIENT: 'dj0yJmk9VWVzRlBrcVN4ejFHJmQ9WVdrOVZubDRiRlpsTTJVbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD1hOA--',
+  Y_REDIRECT: 'http://devpartners-qatest.co'
 });
 app.constant('AUTH_PROVIDER', {
   GOOGLE: 'google',
