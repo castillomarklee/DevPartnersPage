@@ -1,0 +1,42 @@
+<div class="container-fluid constraints">
+    <div class="row">
+        <div class="developer col-sm-12 col-md-6">
+            <img class="avatar" ng-src="{{::vm.content.talent.avatar}}" />
+            <h3 class="name">{{::vm.content.talent.name}}</h3>
+            <h4 class="position-all-caps" text-emphasize="'AngularJS'">{{vm.content.talent.position}}</h4>
+            <p class="main-description">{{vm.content.talent.experience}}</p>
+            <ul class="skills list-horizontal">
+                <li class="label label-yellow large" ng-repeat="skill in vm.content.talent.skills track by $index">
+                    <a href="/us/{{skill.landing}}">{{skill.label}}</a>
+                </li>
+            </ul>
+            <a type="button" class="btn btn-yellow spaced-vertical" hire-people="{{vm.getAdCode()}}" g-analytics-track-event="{category: 'Hire ' + vm.content.talent.nickname, action: ANALYTICS.ACTION_CLICK, label: vm.eventLabel}">
+                Hire experts like {{vm.content.talent.nickname}}
+                <span class="fa fa-chevron-right"></span>
+            </a>
+        </div>
+        <div class="col-sm-12 col-md-6 testimonials">
+            <div class="panel-testimonial" ng-repeat="testimonial in vm.content.testimonials">
+                <img ng-src="{{::testimonial.companyAvatar}}" />
+                <blockquote>
+                    "{{::testimonial.fullTestimony}}"
+                    <footer>{{::testimonial.personName}}</footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+    <!-- Featured Talents Slider -->
+    <div class="row featured-talents">
+        <div class="col-sm-12">
+            <p class="main-description">Dev Partners is a network of IT resources such as software developers, virtual assistants, UI/UX engineers &amp;
+                digital consultants.</p>
+            <div class="featured-talents-profile">
+                <ul class="team">
+                    <li ng-repeat="member in vm.featuredTalents track by $index" ng-class-even="'striped'">
+                        <ng-include src="'featuredTalents/talent-profile.html'" include-replace></ng-include>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

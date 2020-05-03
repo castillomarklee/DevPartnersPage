@@ -1,0 +1,138 @@
+<div class="ourTeam-v3">
+    <div class="ourTeam-banner">
+        <h1 class="col-md-offset-6 col-md-6 col-xs-offset-6 col-xs-6 col-sm-offset-6 col-sm-6">
+            <span>Who </span>We
+            <span>Are</span>
+            <br>
+            <label>We Are Your Reliable Remote Resources Partner</label>
+        </h1>
+    </div>
+    <section class="about-devparners-v3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="about-label text-uppercase">About
+                        <label>Dev Partners</label>
+                    </div>
+                    <p class="more_infos">Headquartered in Singapore, with a large workforce of skilled and experienced tech workers in the Philippines,
+                        we started by providing remote technical resources to the financial services industry in Australia
+                        and New Zealand. We quickly learned that clients want to manage remote resources directly and have
+                        them work in a transparent process and with access to the latest technology to make them most productive.
+                        We listened to our clients and have now expanded to Asia, Europe and North America. Our philosophy
+                        is to provide highly skilled and experienced tech expertise to our clients at a significant cost
+                        savings, to meet specific client needs.</p>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- developer sections -->
+
+    <section id="developers-v3">
+        <div class="container">
+
+            <div class="about-label text-uppercase">Our
+                <label>Developers</label>
+            </div>
+            <div class="row inner-developer">
+
+                <div class="col-sm-12 col-md-12 featured-talents">
+
+                    <div class="featured-talents-profile">
+                        <ul class="team">
+
+                            <li ng-repeat="member in ourPeopleVM.talentList| limitTo:8" class="organize-margin">
+                                <div class="talent-profile col-md-12">
+                                    <div class="col-md-3 ">
+                                        <div class="member-details photo">
+
+                                            <img ng-src=" {{member.avatar_smaller}}" width="200" height="200" class="avatar">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-9">
+                                        <div class="member-details">
+                                            <ul class="skills list-horizontal pull-right">
+                                                <li class="label label-yellow">
+                                                    <a>{{member.skill}}</a>
+                                                </li>
+                                                <li ng-repeat="skill in member.otherSkills track by $index" class="label label-yellow">
+                                                    <a>{{skill}}</a>
+                                                </li>
+
+                                            </ul>
+
+                                            <h4 class="name">{{member.name}} </h4>
+                                            <h6 class="position">{{member.specialization[0]}}</h6>
+                                            <p>{{member.description}}</p>
+
+                                            <a href="/us/{{member.landing}}" class="btn btn-yellow spaced-vertical">
+                                                Hire experts like {{member.name}}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <hr/>
+
+
+
+                        </ul>
+
+                        <!-- <a type="button" href="/us/angularjs" class="btn btn-yellow spaced-vertical"  g-analytics-track-event="{category: 'Hire ' + vm.member.nickname, action: ANALYTICS.ACTION_CLICK, label: vm.eventLabel}" style="">
+                                GET STARTED
+                                 <span class="fa fa-chevron-right"></span>
+                            </a> -->
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="expertise-v3" class="hidden-xs">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="about-label">OUR
+                        <label>EXPERTISE</label>
+                    </div>
+                    <p class="more_infos">We have experts who are skilled and experienced in the following technology platforms:</p>
+                </div>
+            </div>
+
+            <div class="container scroll-technologies">
+                <div class="row">
+                    <div class="slick-responsive">
+                        <div class="well text-center well-lg" ng-repeat="tech in ourPeopleVM.technologies">
+                            <div class="well-inner">
+                                <img ng-src="{{tech.link}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <a type="button" href="/us/angularjs" class="btn btn-yellow spaced-vertical" g-analytics-track-event="{category: 'Hire ' + vm.member.nickname, action: ANALYTICS.ACTION_CLICK, label: vm.eventLabel}"
+                        style="">
+                        GET STARTED
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</div>
