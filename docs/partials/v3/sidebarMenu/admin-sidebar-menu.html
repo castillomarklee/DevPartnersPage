@@ -1,0 +1,64 @@
+<aside id="c-menu--push-left" class="c-menu c-menu--push-left dashboard" ng-if="sidebarNavVM.isLoggedInAsAdmin()"
+  elem-ready="sidebarNavVM.setSidebarMenuObserver('left')">
+  <nav>
+    <h4 class="o-header c-menu__close"> <i class="fa fa-chevron-left hidden-lg hidden-md close-icon"></i>
+      <!-- Logo -->
+      <a ui-sref="{{STATES.ADMIN_DASHBOARD}}" class="logo logo-adjust-top">
+        <div>
+          <img src="assets/images/logo-gold.png?v=1" alt="Dev Partners" />
+          <div class="logo-text">Dev Partners</div>
+        </div>
+      </a>
+    </h4>
+
+    <div class="profile">
+      <img class="avatar" ng-src="{{currentUser.avatar ? currentUser.avatar : 'none'}}" fallback-src="assets/images/fallback-avatar.svg" />
+      <label class="name">{{currentUser.firstName + ' ' + currentUser.lastName}}</label>
+      <label class="position">{{currentUser.ruleName}}</label>
+    </div>
+
+    <ul class="c-menu__items" elem-ready="sidebarNavVM.initSidebar()">
+      <li ng-if="sidebarNavVM.canAccessUsers()">
+        <a ui-sref="{{STATES.ADMIN_USERS}}" class="c-menu__link c-menu__close" ng-class="{'active': sidebarNavVM.isMenuItemActive(STATES.ADMIN_USERS)}">
+          <i class="fa fa-users" aria-hidden="true"></i> Users
+        </a>
+      </li>
+      <li ng-if="sidebarNavVM.canAccessCMS()">
+        <a ui-sref="{{STATES.ADMIN_CMS_POSTS}}" class="c-menu__link c-menu__close" ng-class="{'active': sidebarNavVM.isMenuItemActive(STATES.ADMIN_CMS)}">
+          <i class="fa fa-rss" aria-hidden="true"></i> Blog
+        </a>
+      </li>
+      <li ng-if="sidebarNavVM.canAccessCMS()">
+        <a ui-sref="{{STATES.ADMIN_MEDIA_LIBRARY}}" class="c-menu__link c-menu__close" ng-class="{'active': sidebarNavVM.isMenuItemActive(STATES.ADMIN_MEDIA_LIBRARY)}">
+          <i class="fa fa-picture-o"></i>Image Library
+        </a>
+      </li>
+      <li ng-if="sidebarNavVM.canAccessReferrals()">
+        <a ui-sref="{{STATES.ADMIN_REFERRALS}}" class="c-menu__link c-menu__close" ng-class="{'active': sidebarNavVM.isMenuItemActive(STATES.ADMIN_REFERRALS)}">
+          <i class="fa fa-bullhorn"></i>Referrals
+        </a>
+      </li>
+      <li ng-if="sidebarNavVM.canAccessReferrals()">
+        <a role="button" data-toggle="collapse" href="#collapseMenu" aria-expanded="false" aria-controls="collapseMenu" class="c-menu__link c-menu__close" ng-class="{'active': sidebarNavVM.isMenuItemActive(STATES.ADMIN_SETTINGS_CATEGORIES) || sidebarNavVM.isMenuItemActive(STATES.ADMIN_SETTINGS_SUBCATEGORIES)} ">
+          <i class="fa fa-gear"></i>Settings
+        </a>
+      </li>
+      <ul class="collapse c-menu__items" id="collapseMenu">
+        <li ng-if="sidebarNavVM.canAccessReferrals()">
+          <a ui-sref="{{STATES.ADMIN_SETTINGS_CATEGORIES}}" class="c-menu__link c-menu__close" ng-class="{'active': sidebarNavVM.isMenuItemActive(STATES.ADMIN_SETTINGS_CATEGORIES)}">
+            Categories
+          </a>
+        </li>
+        <li ng-if="sidebarNavVM.canAccessReferrals()">
+          <a ui-sref="{{STATES.ADMIN_SETTINGS_SUBCATEGORIES}}" class="c-menu__link c-menu__close" ng-class="{'active': sidebarNavVM.isMenuItemActive(STATES.ADMIN_SETTINGS_SUBCATEGORIES)}">
+            Subcategories
+          </a>
+        </li>
+      </ul>
+    </ul>
+
+    <footer>
+      <a ng-click="sidebarNavVM.logout()" ng-show="sidebarNavVM.isLoggedIn()" ng-disabled="sidebarNavVM.loggingOut" class="c-menu__link c-menu__close text-original-case"> Log Out <i class="fa fa-sign-out"></i></a>
+    </footer>
+  </nav>
+</aside>

@@ -1,0 +1,25 @@
+<div class="talent-profile right-to-left col-md-12 col-sm-12">
+  <div class="col-md-3 col-sm-12">
+    <div class="member-details photo">
+      <img src="{{member.avatar}}" class="avatar" />
+    </div>
+  </div>
+  <div class="col-md-8 col-sm-12">
+    <div class="member-details">
+      <h4 class="name">{{member.firstName}}
+        <span class="text-emphasize">{{member.lastName}}</span>
+      </h4>
+      <h4 class="position">{{member.position}}</h4>
+      <p>{{member.experience}}</p>
+      <ul class="skills list-horizontal">
+        <li class="label label-yellow" ng-repeat="skill in member.skills track by $index">
+          <a href="/us/{{skill.landing}}">{{skill.label}}</a>
+        </li>
+      </ul>
+      <a type="button" ng-if="vm.showHireButton" class="btn btn-yellow spaced-vertical" hire-people="{{vm.getAdCode()}}" g-analytics-track-event="{category: 'Hire ' + vm.member.nickname, action: ANALYTICS.ACTION_CLICK, label: vm.eventLabel}">
+        Hire experts like {{member.nickname}}
+        <span class="fa fa-chevron-right"></span>
+      </a>
+    </div>
+  </div>
+</div>

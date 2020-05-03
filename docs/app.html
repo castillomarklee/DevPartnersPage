@@ -1,0 +1,33 @@
+<div id="app">
+  <!-- Sidebar Dashboard Menu: User authenticated -->
+  <aside class="hidden-sm hidden-xs embedded-sidebar-nav">
+    <nav>
+      <ul>
+        <!-- <li> <a href> Dashboard </a> </li> -->
+        <li> <a ui-sref="{{STATES.APP_USER_PROFILE}}"> My Profile </a> </li>
+        <li> <a href coming-soon> My Projects </a> </li>
+        <li> <a href coming-soon> My Teams </a> </li>
+      </ul>
+      <footer><a ng-click="sidebarNavVM.logout()" ng-show="sidebarNavVM.isLoggedIn()" ng-disabled="sidebarNavVM.loggingOut"> Log Out </a></footer>
+    </nav>
+  </aside>
+  <div id="app-main-content" class="main-content" ui-view></div>
+</div>
+
+<div id="c-mask" class="c-mask"></div>
+
+<a href="#" id="livilyChatLink" class="livilyChatButton ClickdeskChatLink" image="false" onclick="return false;" ng-hide="mainVM.hideChatButton">
+    <img src="assets/images/chat-icon.png" alt="Chat with us!" />
+</a>
+
+<!-- ClickDesk Live Chat Service for websites -->
+<script type='text/javascript'>
+  var _glc = _glc || []; _glc.push('all_ag9zfmNsaWNrZGVza2NoYXRyEgsSBXVzZXJzGICAoJ6_-csKDA');
+  var glcpath = (('https:' == document.location.protocol) ? 'https://my.clickdesk.com/clickdesk-ui/browser/' :
+    'http://my.clickdesk.com/clickdesk-ui/browser/');
+  var glcp = (('https:' == document.location.protocol) ? 'https://' : 'http://');
+  var glcspt = document.createElement('script'); glcspt.type = 'text/javascript';
+  glcspt.async = true; glcspt.src = glcpath + 'livechat-new.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(glcspt, s);
+</script>
+<!-- End of ClickDesk -->

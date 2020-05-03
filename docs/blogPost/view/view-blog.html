@@ -1,0 +1,149 @@
+<div class="blog">
+        <header>
+            <h1>FEATURED POST</h1>
+            <div class="featured-blog-posts" ng-controller="FeaturedPostsCtrl as featuredPostsVM" ng-init="featuredPostsVM.setGroupSize(1)">
+                <div class="container-fluid">
+                    <div class="slide carousel-fade carousel-with-controls" uib-carousel active="featuredPostsVM.active" no-pause="true" no-wrap="false" ng-show="featuredPostsVM.featuredPostsLoaded" interval="6000">
+                        <div class="row" ng-repeat="group in featuredPostsVM.groupedFeaturedPosts track by $index" uib-slide index="$index" ng-if="featuredPostsVM.groupedFeaturedPosts.length > 0">
+                            <div ng-repeat="post in group track by post.id" class="slide-inner col-sm-12">
+                                <div class="cover-img" ng-class="{'img-center-cropped-fill-parent-landscape' : featuredPostsVM.isScreenDefault(), 'img-center-cropped-fill-parent-portrait' : !featuredPostsVM.isScreenDefault()}">
+                                    <img ng-src="{{post.coverImg}}" fallback-src="assets/images/fallback.svg" />
+                                </div>
+                                <div class="constraints content">
+                                    <h2 class="content-title">{{post.title}}</h2>
+                                    <p class="content-preview">{{post.subTitle}}</p>
+                                    <a ui-sref="{{STATES.VIEW_BLOG_POST}}({postId: post.id})" class="cta btn-outline-yellow">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="constraints">
+            <!-- Navigation -->
+            <nav class="blog-nav">
+                <div class="nav-row">
+                    <div class="btn-group hidden-md hidden-lg">
+                        <button type="button" class="title" ng-click="blogVM.categoryFilterShow = !blogVM.categoryFilterShow">{{blogVM.blog.categoryName}}</button>
+                        <button type="button" class="toggle" ng-click="blogVM.categoryFilterShow = !blogVM.categoryFilterShow"><span class="fa fa-caret-down"></span></button>
+                    </div>
+                    <!-- Category Filter: Medium to Large screens -->
+                    <ul class="blog-category-filter nav-cell" ng-if="!blogVM.isMobile()">
+                        <li ng-repeat="categoryFilter in blogVM.categoryFilters track by categoryFilter.id" ng-class="{'active': blogVM.blog.categoryId === categoryFilter.id}">
+                            <a href ng-click="blogVM.filterListByCategory(categoryFilter)">{{categoryFilter.name}}</a>
+                        </li>
+                    </ul>
+                    <!-- Sort box -->
+                    <div class="sort-box nav-cell" ng-if="!blogVM.isMobile()">
+                        <label class="hidden-md">SORT BY</label>
+                        <select id="blog-sort" name="sort" class="selectpicker custom-dropdown-compact" elem-ready="blogVM.loadSortOrders('blog-sort')"
+                            ng-options="sort.value as sort.name for sort in blogVM.sortOrders" ng-model="blogVM.blog.order.orderBy" ng-change="blogVM.sortList()">
+                        </select>
+                    </div>
+                    <!-- Archive Button -->
+                    <div class="nav-cell">
+                        <button type="button" class="archive-toggle" ng-class="{'active': blogVM.archiveOpen}" ng-click="blogVM.archiveOpen = !blogVM.archiveOpen" title="View Archive">
+                            <span class="fa fa-bars"></span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Category Filter: Small to XSmall screens -->
+                <div class="sub-navigation compact">
+                    <ul ng-if="blogVM.isMobile()" ng-show="blogVM.categoryFilterShow">
+                        <li ng-repeat="categoryFilter in blogVM.categoryFilters track by categoryFilter.id" ng-class="{'active': blogVM.blog.categoryId === categoryFilter.id}">
+                            <a href ng-click="blogVM.filterListByCategory(categoryFilter)">{{categoryFilter.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Compact Sort box -->
+                <div class="sort-box nav-row" ng-if="blogVM.isMobile()">
+                    <div class="btn-group">
+                        <button type="button" class="title" ng-click="blogVM.sortOrderShow = !blogVM.sortOrderShow">{{blogVM.blog.order.orderByName}}</button>
+                        <button type="button" class="toggle" ng-click="blogVM.sortOrderShow = !blogVM.sortOrderShow"><span class="fa fa-caret-down"></span></button>
+                    </div>
+                    <div class="sub-navigation compact">
+                        <ul ng-show="blogVM.sortOrderShow">
+                            <li ng-repeat="sort in blogVM.sortOrders" ng-class="{'active': sort.value === blogVM.blog.order.orderBy}">
+                                <a ng-click="blogVM.sortList(sort)">{{sort.name}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- List -->
+            <div class="container-fluid list-posts" loading-in-progress="blogVM.loadingPosts" elem-ready="blogVM.initializeList()">
+                <div class="row">
+                    <div ng-repeat="post in blogVM.blog.items track by post.id" class="post-panel col-md-4 col-sm-6 col-xs-12">
+                        <div class="box-shadow">
+                            <div class="cover-img img-center-cropped-fill-parent">
+                                <img ng-src="{{post.coverImg}}" fallback-src="assets/images/fallback.svg" />
+                                <!-- <span class="label-outline-yellow">{{post.categoryName}}</span> -->
+                            </div>
+                            <div class="details">
+                                <h3><a ui-sref="{{STATES.VIEW_BLOG_POST}}({postId: post.id})">{{post.title}}</a></h3>
+                                <p class="content-preview">{{post.subTitle}}</p>
+                                <a ui-sref="{{STATES.VIEW_BLOG_POST}}({postId: post.id})" class="btn-link"><span class="fa fa-long-arrow-right"></span>Read More</a>
+                            </div>
+                            <footer>
+                                <span>
+                                    <i class="fa fa-heart"></i>
+                                    {{post.likesCount || 0}}
+                                </span>
+                                <span>
+                                    <i class="fa fa-clock-o"></i>
+                                    {{post.datePublished | timeago}}
+                                </span>
+                                <span class="share-buttons">
+                                    <a share-via-facebook="post.shareable"><i class="fa fa-facebook-square fa-2x"></i></a>
+                                    <a share-via-twitter="post.shareable['twitter']"><i class="fa fa-twitter-square fa-2x"></i></a>
+                                    <a share-via-linked-in="post.shareable"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                                    <a share-via-email="post.shareable"><i class="fa fa-envelope-square fa-2x"></i></a>
+                                </span>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="blogVM.blog.size === 0 && !blogVM.loadingPosts" class="row text-center-align">
+                    <p class="col-sm-12">No posts available.</p>
+                </div>
+                <!-- Archives -->
+                <aside class="archive" ng-controller="BlogArchiveCtrl as archiveVM" ng-show="blogVM.archiveOpen">
+                    <uib-accordion close-others="true" id="parent-accordion">
+                        <uib-accordion-group heading="{{yearGroup.year}}" ng-repeat="yearGroup in archiveVM.archives track by yearGroup.year" is-open="yearGroup.isOpen">
+                            <uib-accordion close-others="true">
+                                <div uib-accordion-group ng-repeat="monthGroup in yearGroup.month track by monthGroup.month" is-open="monthGroup.isOpen">
+                                    <uib-accordion-heading>
+                                        <div class="according-heading-inner" loading-in-progress="monthGroup.loadingPosts" ng-click="archiveVM.onMonthGroupClick(monthGroup, yearGroup.year)">
+                                            {{monthGroup.month + ' ' + yearGroup.year}}
+                                        </div>
+                                    </uib-accordion-heading>
+                                    <div class="media" ng-repeat="post in monthGroup.posts track by post.id">
+                                        <a ui-sref="{{STATES.VIEW_BLOG_POST}}({postId: post.id})">
+                                            <div class="media-left">
+                                                <img class="media-object" ng-src="{{post.coverImg}}" alt="{{post.title}}" fallback-src="assets/images/fallback.svg" class="img-responsive">
+                                            </div>
+                                            <div class="media-body">
+                                                <p>
+                                                    {{post.subTitle | limitTo:60}}
+                                                    <span class="ellipsis" ng-if="post.subTitle.length > 60">...</span>
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="load-more" ng-show="monthGroup.records > monthGroup.posts.length">
+                                        <a ng-click="archiveVM.loadMore(monthGroup, yearGroup.year)" class="text-emphasize text-bold">See More...</a>
+                                    </div>
+                                </div>
+                            </uib-accordion>
+                        </uib-accordion-group>
+                    </uib-accordion>
+                </aside>
+            </div>
+    
+            <!-- List Pager -->
+            <ul class="pagination-sm" uib-pagination total-items="blogVM.blog.records" ng-model="blogVM.blog.page" ng-change="blogVM.loadPage(blogVM.blog.page)"
+                max-size="4" items-per-page="blogVM.blog.perPage" next-text="&#xf054" previous-text="&#xf053" boundary-link-numbers="true"></ul>
+        </div>
+    </div>

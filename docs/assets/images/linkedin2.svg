@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="24px" viewBox="0 0 27 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>linkedin2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Referral" transform="translate(-88.000000, -1044.000000)" fill-rule="nonzero" fill="#FFFFFF">
+            <g id="Group-3" transform="translate(45.000000, 925.000000)">
+                <g id="Group-2">
+                    <g id="Group-4">
+                        <g id="Group-5" transform="translate(0.000000, 99.000000)">
+                            <g id="linkedin2" transform="translate(43.000000, 20.000000)">
+                                <path d="M11,8 L15.92,8 L15.92,10.5217778 L15.9902222,10.5217778 C16.6746667,9.29422222 18.3502222,8 20.8471111,8 C26.04,8 27,11.2328889 27,15.4373333 L27,24 L21.872,24 L21.872,16.4088889 C21.872,14.5982222 21.8346667,12.2693333 19.2044444,12.2693333 C16.5333333,12.2693333 16.1262222,14.2408889 16.1262222,16.2773333 L16.1262222,24 L11,24 L11,8 Z" id="Shape"></path>
+                                <polygon id="Shape" points="0 8 5 8 5 24 0 24"></polygon>
+                                <path d="M5,2.5 C5,3.88083333 3.88083333,5 2.5,5 C1.11916667,5 0,3.88083333 0,2.5 C0,1.11916667 1.11916667,0 2.5,0 C3.88083333,0 5,1.11916667 5,2.5 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

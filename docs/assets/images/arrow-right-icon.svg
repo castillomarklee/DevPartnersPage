@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="10px" viewBox="0 0 14 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow-right-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M11.0710678,8 L6,13.0710678 L0.928932188,8 L11.0710678,8 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-Page" transform="translate(-258.000000, -517.000000)">
+            <g id="Group-4" transform="translate(224.000000, 60.000000)">
+                <g id="Group-17" transform="translate(0.000000, 184.000000)">
+                    <g id="Get-Started-button" transform="translate(0.000000, 252.000000)">
+                        <g id="arrow-right-icon" transform="translate(42.000000, 26.000000) rotate(-90.000000) translate(-42.000000, -26.000000) translate(36.000000, 19.000000)">
+                            <g id="Arrow-Copy">
+                                <path d="M6,0.5 L6,10.5" id="Line-2" stroke="#FFBB41" stroke-width="2" stroke-linecap="square"></path>
+                                <g id="Combined-Shape">
+                                    <use fill="#FFBB41" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                    <path stroke="#FFBB41" stroke-width="1" d="M9.86396103,8.5 L2.13603897,8.5 L6,12.363961 L9.86396103,8.5 Z"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,435 @@
+/* modal */
+
+.modal-content {
+  @include border-radius(3px);
+  @include reset-list();
+}
+.modal-header {
+  padding: $padding-base-vertical $padding-base-horizontal;
+  background-color: transparent;
+  border-bottom: 0;
+
+  .modal-title {
+    font-weight: 300;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 20px;
+    @include calc(width, '100% - 21px');
+
+    > span.glyphicon {
+      font-size: .5em;
+      top: -.3em;
+    }
+  }
+}
+.modal-close-btn {
+  float: right;
+  background: transparent;
+  border: 0;
+  font-size: 30px;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  line-height: .7em;
+  &::after {
+    content: '\f057';
+    font-family: FontAwesome;
+    color: $yellow-gold;
+    font-size: 24px;
+    vertical-align: top;
+  }
+}
+.modal-body {
+  padding: 15px 15px 20px;
+  @include calc(max-height, 100vh - (100vh*.30));
+  overflow: auto;
+
+  .modal-cover-img {
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto 2em;
+    left: 0;
+    right: 0;
+    display: block;
+  }
+
+  form {
+    textarea {
+      height: 100px;
+    }
+    .datetimepicker-field {
+      .caret {
+        top: 36px;
+      }
+      .external-datetimepicker-toggle {
+        top: 0;
+      }
+      .uib-timepicker {
+        margin-top: -1.5em;
+      }
+      @media(max-width: 1199px) {
+        .uib-timepicker {
+          margin-top: 1em;
+        }
+      }
+    }
+    .btn {
+      padding: $padding-base-vertical $padding-base-horizontal;
+      min-width: 120px;
+      font-weight: bold;
+      &.dropdown-toggle {
+        font-weight: normal;
+        padding: 12px;
+      }
+    }
+  }
+
+  ul {
+    font-size: 16px;
+    color: $gray-light;
+  }
+
+  &.cta {
+    .cta-message {
+      text-align: center;
+      text-transform: none;
+      font-size: 16px;
+    }
+    .btn {
+      width: 100%;
+      margin: 20px 0;
+      color: white;
+      font-weight: bold;
+    }
+  }
+}
+.modal-open {
+  overflow: hidden;
+}
+.modal-footer {
+  border: 0;
+}
+
+/* modal callout */
+.modal-callout {
+  .modal-content {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+
+    .callout {
+      position: relative;
+      padding: 2em;
+      margin: 1em 0 3em;
+      color: #212121;
+      background: #ffffff;
+      display: block;
+      @include box-shadow-o(0 5px 15px rgba(0, 0, 0, 0.5));
+
+      .callout-content {
+        padding: 2em;
+        border: 2px solid $yellow-gold;
+
+        .modal-title {
+          font-size: 4em;
+          text-align: right;
+        }
+
+        .modal-body {
+          overflow-y: visible;
+          padding: 0 !important;
+          margin-top: .5em;
+          margin-right: 60px;
+          font-style: italic;
+          font-size: 1.5em;
+          z-index: 1;
+
+          p {
+            padding: 0 !important;
+          }
+        }
+      }
+      .callout-content:before, .callout-content:after {
+        content: '';
+        width: 150px;
+        height: 150px;
+        background: url(../images/bigquotes.png) center center no-repeat;
+        background-size: contain;
+        display: block;
+        position: absolute;
+      }
+      .callout-content:before {
+        top: 0;
+        left: 0;
+      }
+      .callout-content:after {
+        bottom: 0;
+        right: 0;
+        transform: scale(-1);
+      }
+    }
+    .callout:after {
+      content: "";
+      position: absolute;
+      bottom: -70px;
+      left: 50px;
+      border-width: 70px 0 0 60px;
+      border-style: solid;
+      border-color: white transparent;
+      display: block;
+      width: 0;
+    }
+  }
+}
+
+.modal-lg {
+  min-width: 80%;
+  height: 85%;
+  > .modal-content {
+    height: 100%;
+    .modal-body {
+      height: 80%;
+    }
+  }
+}
+
+.modal {
+  text-align: center;
+  width: 100%;
+  padding: 0!important;
+  &::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px;
+  }
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+  max-width: 95%;
+  margin: 0;
+  padding: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-callout:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+}
+
+@media(max-width: 540px) {
+  .callout-content:before, .callout-content:after {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .modal-title {
+    font-size: 1.5em !important;
+  }
+
+  .modal-body {
+    margin-right: 0px !important;
+    p {
+      font-size: .9em !important;
+    }
+  }
+}
+
+/* form modal */
+.form-modal {
+  height: 100%;
+  background-color: #ffffff;
+  .modal-header {
+    background-color: transparent;
+    border-bottom: none;
+  }
+  .modal-body {padding-top: 0;}
+  .modal-close-btn {color: #ccc;}
+  > .row {
+    height: 100%;
+    > div {
+      padding: 0;
+      background-color: #ffffff;
+      height: 100%;
+    }
+    .form-modal-cover {
+      background-color: $yellow-gold;
+      padding: 3em;
+      height: 100%;
+      > div {
+        height: 100%;
+        border: 2px solid #fff;
+        z-index: 2;
+        position: relative;
+      }
+      img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+    .form-modal-cover:before, .form-modal-cover:after {
+      content: '';
+      width: 150px;
+      height: 150px;
+      background: url(../images/inverted-bigquotes.jpg) center center no-repeat;
+      background-size: contain;
+      display: block;
+      position: absolute;
+      z-index: 3;
+      border: 2em solid $yellow-gold;
+      background-color: $yellow-gold;
+    }
+    .form-modal-cover:before {
+      top: .5em;
+      left: .5em;
+    }
+    .form-modal-cover:after {
+      bottom: .5em;
+      right: .5em;
+      transform: scale(-1);
+    }
+  }
+}
+
+/* frameless modal video */
+.modal-frameless {
+  .modal-content {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+  }
+}
+.modal-video {
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+  .modal-close-btn {
+    position:absolute;
+    top:3px;
+    right: 5px;
+  }
+}
+
+/* subscription popup */
+.modal-subscription {
+  .modal-dialog {
+    max-height: 494px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%) !important);
+  }
+  .modal-body.container-fluid {
+    padding: 0;
+    height: 100%;
+    border-radius: inherit;
+    .row {
+      height: 100%;
+      margin: 0;
+      .logo {
+        text-align: center;
+        margin-top: 50px;
+        img {
+          height: 70px;
+        }
+        .logo-text {
+          font-size: 22px;
+          font-weight: 600;
+        }
+      }
+      .cover {
+        height: 100%;
+        background: #D5D5D5 url(../images/referral/referral-cover.jpg) no-repeat center 30px;
+        background-size: cover;
+      }
+      .content {
+        text-align: center;
+        padding-left: 30px;
+        padding-right: 30px;
+        .heading {
+          font-weight: normal;
+          font-size: 16px;
+          margin: 0;
+          padding-top: 110px;
+          padding-bottom: 30px;
+          color: $gray;
+          .emphasize-dark {
+            max-width: 255px;
+            width: 100%;
+            height: 45px;
+            display: block;
+            margin: 15px auto;
+            padding: 5px;
+            background-color: black;
+            font-size: 28px;
+            font-weight: 900;
+            color: $yellow-gold;
+            line-height: 23px;
+            span {
+              border: 1px dashed $yellow-gold;
+              display: inline-block;
+              width: 100%;
+              vertical-align: text-bottom;
+              padding: 7px 0 3px;
+            }
+          }
+        }
+        form {
+          input {
+            border: none;
+            text-align: center;
+            @include box-shadow-o(inset 0px 1px 4px 1px rgba(31, 31, 31, .15) !important);
+            @include input-placeholder {
+              color: $gray-lighter;
+              font-size: 12px;
+            }
+            border-radius: 4px;
+            border-bottom: 15px;
+
+            &:focus, &:active {
+              border: none !important;
+            }
+          }
+          label {
+            font-size: 13px;
+            line-height: 14px;
+          }
+          .btn {
+            width: 100%;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+  .modal-close-btn {
+    margin-right: -15px;
+    margin-top: 10px;
+  }
+  @media(min-width: $screen-md) {
+    .modal-dialog {
+      height: 500px;
+      max-width: 958px;
+      min-width: inherit;
+    }
+    .modal-body.container-fluid {
+      max-height: initial;
+      .row {
+        @include flex();
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+<footer id="footer" class="footer" data-ng-init="footerNavVM.init()" state-footer-class>
+  <div class="logo-footer constraints">
+    <a ui-sref="{{STATES.HOME}}" ng-if="!footerNavVM.isHomePage">
+      <img src="assets/images/logo-gold.png?v=1" class="img-responsive logo" />
+    </a>
+    <a du-smooth-scroll='main-container' ng-if="footerNavVM.isHomePage">
+      <img src="assets/images/logo-gold.png?v=1" class="img-responsive logo" />
+    </a>
+    <a du-smooth-scroll="main-content" class="btn-scroll-top hidden-md hidden-lg">
+      <span class="fa fa-long-arrow-up"></span>
+      TOP
+    </a>
+  </div>
+  <nav class="constraints" ng-controller="FooterNavDisplayCtlr as navDisplayVM">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Services Menu -->
+        <!-- <div class="col-md-3 col-lg-3">
+          <label class="hidden-sm hidden-xs">SERVICES</label>
+          <a class="hidden-lg hidden-md section-toggle" ng-class="{'expanded': navDisplayVM.servicesExpanded}" href ng-click="navDisplayVM.servicesExpanded = !navDisplayVM.servicesExpanded">
+            <label>SERVICES</label>
+          </a>
+
+          <ul class="list-type-long-arrow collapsible-content" ng-show="navDisplayVM.servicesExpanded">
+            <li>
+              <a ui-sref="{{STATES.SOFTWARE_DEVELOPMENT}}">
+                Software Development
+              </a>
+            </li>
+            <li>
+              <a ui-sref="{{STATES.UIUX_DESIGN_STRATEGY}}">
+                UI/UX Design &amp; Strategy
+              </a>
+            </li>
+            <li>
+              <a ui-sref="{{STATES.PRODUCT_MANAGEMENT}}">
+                Product Management
+              </a>
+            </li>
+            <li>
+              <a ui-sref="{{STATES.REMOTE_ADMIN_MANAGEMENT}}">
+                Virtual Assistant Support
+              </a>
+            </li>
+          </ul>
+        </div> -->
+        <!-- About Menu -->
+        <div class="col-md-3 col-lg-3">
+          <label class="hidden-xs hidden-sm">CATEGORIES</label>
+          <a class="hidden-lg hidden-md section-toggle" href ng-click="navDisplayVM.aboutExpanded = !navDisplayVM.aboutExpanded" ng-class="{'expanded': navDisplayVM.aboutExpanded}">
+            <label>CATEGORIES</label>
+          </a>
+
+          <ul class="list-type-long-arrow collapsible-content" ng-show="navDisplayVM.aboutExpanded">
+            <li> <a ui-sref="{{STATES.OUR_PEOPLE}}"> Our Team </a> </li>
+            <li> <a ui-sref='{{STATES.TESTIMONIALS}}'> Our Process </a> </li>
+            <li> <a ui-sref='{{STATES.PRIVACY_POLICY}}'> Why </a> </li>
+            <li> <a ui-sref="{{STATES.FAQS}}"> Blog </a> </li>
+            <li> <a ui-sref="{{STATES.FAQS}}"> Contact Us </a> </li>
+          </ul>
+        </div>
+        <!-- Connect Section -->
+        <div class="col-md-6 col-lg-6">
+          <label class="hidden-xs hidden-sm">RECENT POSTS</label>
+          <a class="hidden-lg hidden-md section-toggle" href ng-click="navDisplayVM.connectExpanded = !navDisplayVM.connectExpanded" ng-class="{'expanded': navDisplayVM.connectExpanded}">
+            <label>RECENT POSTS</label>
+          </a>
+          <div ng-show="navDisplayVM.connectExpanded" class="row collapsible-content" ng-repeat="x in navDisplayVM.myBlogs">
+            <div class="col-md-3">
+              <img src="{{x.coverImg}}" class="img-responsive img-rounded" style="height:100px; width:100px; margin-top:10px;">
+            </div>
+            <div class="col-md-9" style="color: #333333;">
+              <h5 class="blogTitle">{{x.title}}</h5>
+              <p class="blogContent" style="font-size:14px;">{{x.subTitle}}<br><a ui-sref="public.viewBlogPost({postId:x.id})" href="{{x.content}}" style="color:#FFBB41">Read More >></a></p>
+            </div>
+          </div>
+          <!-- <subscription-form ng-show="navDisplayVM.connectExpanded" class="collapsible-content"></subscription-form> -->
+        </div>
+        <!-- Social Section -->
+        <div class="col-md-3 col-lg-3">
+          <label class="hidden-xs hidden-sm">CONTACT</label>
+          <a class="hidden-lg hidden-md section-toggle" href ng-click="navDisplayVM.socialExpanded = !navDisplayVM.socialExpanded" ng-class="{'expanded': navDisplayVM.socialExpanded}">
+            <label>SOCIAL</label>
+          </a>
+
+          <div ng-show="navDisplayVM.socialExpanded" class="collapsible-content">
+            <ul id="other-contacts">
+              <li>
+                <address>
+                  <img class="flag" src="assets/flags/us.png" alt="US" />
+                  <div>
+                    <span class="address-name">Steven Bustin:</span> <br><a href class="address-others"><span>+1 415 310 1207</span> </a> <br> <a href="mailto:steven@devpartners.co" class="address-others"><span></span>steven@devpartners.co</a>
+                    <div class="address-others"> US Sales Office, San Francisco, <br>California, USA </div>
+                  </div>
+                </address>
+              </li>
+              <br>
+              <li>
+                  <address>
+                    <img class="flag" src="assets/flags/ph.png" alt="US" />
+                    <div>
+                      <span class="address-name">Roland Votacion:</span> <br><a href class="address-others"> <span>+63 933 378 5250</span> </a> <br> <a href="mailto:roland@devpartners.co" class="address-others"><span>roland@devpartners.co</span></a>
+                      <div class="address-others"> PH Sales Office, Davao City, <br>Davao del Sur, Philippines </div>
+                    </div>
+                  </address>
+                </li>    
+            </ul>
+
+            <ul class="list-horizontal social-media-links">
+              <li> <a href="https://www.linkedin.com/company/devpartnerssoftwaresolutions" target="_blank"> <i class="fa fa-linkedin-square link"></i> </a>              </li>
+              <li> <a href="https://www.facebook.com/DevPartnersPH/" target="_blank"> <i class="fa fa-facebook-square link"></i> </a>              </li>
+              <li> <a href="https://twitter.com/DevPartnersPH" target="_blank"> <i class="fa fa-twitter-square link"></i> </a>              </li>
+              <li> <a href="https://www.youtube.com/channel/UC504fH6kn-vOztZozrnQwvQ" target="_blank"> <i class="fa fa-youtube-square link"></i> </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="info constraints">
+    <div class="text-center-align">
+      &copy; Copyright 2017 Dev Partners Philippines, Inc.
+    </div>
+  </div>
+
+</footer>

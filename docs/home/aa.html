@@ -1,0 +1,325 @@
+<div id="home">
+        <!-- Pitch -->
+        <div class="img-responsive" ng-class="{'home-bg' : !homeVM.isScreenSmall(), 'home-bg-mobile' : homeVM.isScreenSmall()}"></div>
+        <header id="pitch" class="constraints">
+            <div class="pitch-container">
+                <div class="call-to-action jumbotron">
+                    <h1 class="text-thin" text-emphasize="'Partner'">{{app.description}}</h1>
+                    <p>Sourcing experts for on time, on spec and on budget solutions</p>
+                </div>
+                <!-- Hire IT Professionals -->
+                <div class="featured-talents-container">
+                    <div id="featured-talents-slider">
+                        <div class="constraints section container-fluid">
+                            <featured-talents-slider></featured-talents-slider>
+                            <a type="button" class="btn btn-yellow text-light btn-hire" hire-people>
+                                <strong>Hire Now</strong>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Trusted By -->
+        <div id="trusted-by">
+            <div class="constraints section">
+                <h2 class="section-title"> A Service Trusted by clients </h2>
+                <div class="container-fluid">
+                    <div class="row company-logos">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" id="loanmarket">
+                            <a href="https://Loanmarket.com.au" target="_blank">
+                                <img class="grow" src="assets/images/home/loanmarket-logo.svg" alt="Loan Market" />
+                            </a>
+                        </div>
+    
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2">
+                            <a href="http://awesomeholidayrentals.co.nz" target="_blank">
+                                <img class="grow" src="assets/images/home/awesome_hr-logo.png" alt="Awesome Home Rentals" />
+                            </a>
+                        </div>
+    
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2">
+                            <a href="https://www.nzfsg.co.nz" target="_blank">
+                                <img class="grow" src="assets/images/home/NZFSG-logo.svg" alt="NZFS Financial Services Group" />
+                            </a>
+                        </div>
+    
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" id="mortgage-direct">
+                            <a href="http://mortgagedirect.nz" target="_blank">
+                                <img class="grow" src="assets/images/home/mortgage_direct-logo.png" class="img-responsive-sm" alt="Mortage Direct" />
+                            </a>
+                        </div>
+    
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2" id="blackfin">
+                            <a href="http://www.blackfintech.co/" target="_blank">
+                                <img class="grow" src="assets/images/home/blackfin_logo.png" class="img-responsive-sm" alt="BlackFin" />
+                            </a>
+                        </div>
+                        
+                    </div>
+                    <div class="row" style="margin-left: -3px;
+                    margin-top: 33px;">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 company-logo-container" id="techstyle" style="display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 50px;">
+                            <a href="https://techstylefashiongroup.com/" target="_blank">
+                                <img class="grow" src="assets/images/home/tech_style_fixed.png" class="img-responsive-sm" alt="techstyle" />
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 company-logo-container" id="the_property_crowd" style="display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 50px;">
+                            <a href="https://thepropertycrowd.co.nz/home" target="_blank">
+                                <img class="grow" src="assets/images/home/thepropertycrowd.png" class="img-responsive-sm property-crowd-style" alt="the_property_crowd" style="width: 400px;" />
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 company-logo-container" id="ics_solutions" style="display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 50px;">
+                            <a href="javascript: void(0)">
+                                <img class="grow" src="assets/images/home/oics_solutions.png" class="img-responsive-sm" alt="ics_solutions" />
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 company-logo-container" id="partbnb" style="display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 50px;">
+                            <a href="javascript: void(0)">
+                                <img class="grow" src="assets/images/home/partbnb_logo_rgb.png" class="img-responsive-sm" alt="partbnb" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-left: -3px;
+                        margin-top: 68px;">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 company-logo-container" id="techstyle" style="display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 50px;">
+                            <a href="https://bonsaimediagroup.com/" target="_blank">
+                                <img class="grow" src="assets/images/home/bonsaiMedia.png" class="img-responsive-sm" alt="bonsai_media" />
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 company-logo-container" id="the_property_crowd" style="display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 50px;">
+                            <a href="https://telemax.com.au/" target="_blank">
+                                <img class="grow" src="assets/images/home/Telemax_Logo_180x50_crop_center@2x_black.png" class="img-responsive-sm property-crowd-style" alt="telemax" style="width: 400px;" />
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 company-logo-container" id="ics_solutions" style="display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 50px;">
+                            <a href="https://www.modway.com/" target="_blank">
+                                <img class="grow" src="assets/images/home/modway.png" class="img-responsive-sm" alt="modway" />
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 company-logo-container" id="partbnb" style="display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 50px;">
+                            <a href="https://www.projectassistant.org/" target="_blank">
+                                <img class="grow" src="assets/images/home/projectAssistant.png" class="img-responsive-sm" alt="project_assistant" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-left: -3px;
+                        margin-top: 68px;">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 company-logo-container" id="techstyle" style="display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 50px;">
+                            <a href="https://humanpixel.com.au/" target="_blank">
+                                <img class="grow" src="assets/images/home/Logo-Human-Pixel-Horizontal.png" class="img-responsive-sm" alt="human_pixel" />
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 company-logo-container" id="the_property_crowd" style="display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 50px;">
+                            <a href="http://tradeskips.com/" target="_blank">
+                                <img class="grow" src="assets/images/home/trade_skips.png" class="img-responsive-sm property-crowd-style" alt="tradeskips" style="width: 400px;" />
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 company-logo-container" id="ics_solutions" style="display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 50px;">
+                            <a href="http://entexproducts.com/" target="_blank">
+                                <img class="grow" src="assets/images/home/entex2.png" class="img-responsive-sm" alt="entex" />
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 company-logo-container" id="partbnb" style="display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 50px;">
+                            <a href="https://maplehoney.co/" target="_blank">
+                                <img class="grow" src="assets/images/home/Maple-Honey-2018-Logo-light-trans2.png" class="img-responsive-sm" style="width: 100px; height: 100px;" alt="maple_honey" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-left: -3px;
+                        margin-top: 68px;">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 company-logo-container" id="techstyle" style="display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 50px;">
+                            <a href="https://www.gbscorp.com/" target="_blank">
+                                <img class="grow" src="assets/images/home/gbs_corp.png" class="img-responsive-sm" alt="gbs_corp" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonials -->
+        <div id="testimonials">
+            <!-- Medium to Large screens -->
+            <div class="container-fluid constraints">
+                <div class="testimonies row">
+                    <div class="col-sm-12 col-md-4" ng-repeat="testimonial in homeVM.testimonials track by $index">
+                        <img ng-src="{{testimonial.personAvatar}}" class="avatar" />
+                        <blockquote>
+                            <p>{{testimonial.testimony}}</p>
+                            <footer class="testifier">
+                                <strong>{{testimonial.personName}}</strong>
+                                <div class="label-yellow"> {{testimonial.personPosition}} </div>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Three P's -->
+        <build-process section-title="WHAT MAKES OUR PEOPLE EXPERTS IN WHAT THEY DO."></build-process>
+        <!-- Who We Are -->
+        <div id="who-we-are" class="section-horizontal container-fluid">
+            <div class="row">
+                <div class="cover-img col-sm-12 col-md-6 hidden-sm hidden-xs"></div>
+                <!-- Medium to Large Screens -->
+                <div class="section-content col-sm-12 col-md-6">
+                    <!-- Content -->
+                    <div>
+                        <h2 class="text-thin">Who We Are</h2>
+                        <p class="text-thin">
+                            We started believing that great services can only be achieved when there are only the best people.
+                            <br/>
+                            <a ui-sref="{{STATES.OUR_PEOPLE}}" class="text-bold">Learn more</a>
+                            <span class="fa fa-chevron-right"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cover-img col-sm-12 hidden-md hidden-lg"></div>
+            </div>
+        </div>
+        <!-- Core Services -->
+        <div id="our-core-services" class="container-fluid section">
+            <div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 service" ng-repeat="coreService in homeVM.coreServices.slice(0, 4) track by $index">
+                        <div>
+                            <a ui-sref="{{coreService.page}}">
+                                <img ng-src="{{coreService.coverImg.small}}" alt="{{coreService.title}}" />
+                                <h2 class="caption text-upperc"> {{coreService.title}} </h2>
+                            </a>
+                            <div class="service-description">
+                                <p>
+                                    {{coreService.description}}
+                                    <br/>
+                                    <a ui-sref="{{coreService.page}}" class="text-emphasize">Learn more</a>
+                                    <span class="fa fa-chevron-right"></span>
+                                    <a hire-people class="text-emphasize">Hire Now</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Get In Touch -->
+        <div id="contact-info" class="container-fluid section">
+            <!-- Medium to Large Screens -->
+            <div class="row constraints hidden-xs hidden-sm" ng-if="!homeVM.isScreenSmall()">
+                <h2 class="section-title">GET IN TOUCH WITH US</h2>
+                <p class="section-description">Fill out the form below and a Dev Partners representative will contact you as soon as possible.</p>
+                <!-- Location -->
+                <div class="location col-md-12 col-lg-6">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-12" ng-repeat="office in homeVM.offices track by $index">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <!-- Map -->
+                                    <img ng-src="{{office.mapsUrl}}" />
+                                    <!-- Address & Contact Info -->
+                                    <div class="content-left-overlay">
+                                        <h3> {{office.name}} </h3>
+                                        <address>
+                                            <div class="description-sm">
+                                                {{office.address}}
+                                            </div>
+                                            <div class="description-sm">
+                                                {{office.contactNum}}
+                                            </div>
+                                        </address>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact Form -->
+                <div id="contact-us-container" class="contact-us-container col-md-12 col-lg-6">
+                    <contact-us show-title="false"></contact-us>
+                </div>
+            </div>
+            <!-- Small to XSmall Screens -->
+            <div class="hidden-md hidden-lg" ng-if="homeVM.isScreenSmall()">
+                <!-- Contact Form -->
+                <div id="contact-us-container" class="contact-us-container col-md-12 col-lg-6">
+                    <contact-us show-title="false"></contact-us>
+                </div>
+                <!-- Location -->
+                <div class="location">
+                    <div ng-repeat="office in homeVM.offices track by $index" ng-switch="office.viewMap" class="switch-view-layout">
+                        <!-- Address & Contact Info -->
+                        <div class="switch-view-initial" ng-switch-default>
+                            <div class="location-details">
+                                <h3 class="location-name">{{office.name}}</h3>
+                                <address>
+                                    <div class="description-sm">
+                                        {{office.address}}
+                                    </div>
+                                    <div class="description-sm">
+                                        {{office.contactNum}}
+                                    </div>
+                                </address>
+                            </div>
+                            <button class="switch" ng-click="office.viewMap=true;">
+                                <span>View Map</span>
+                                <div>
+                                    <span class="fa fa-long-arrow-left"></span>
+                                </div>
+                            </button>
+                        </div>
+                        <!-- Map -->
+                        <div class="switch-view-secondary" ng-switch-when="true">
+                            <div class="img-center-cropped-fill-parent">
+                                <img ng-src="{{office.mapsUrl}}" />
+                            </div>
+                            <button class="switch" ng-click="office.viewMap=false;">
+                                <span>Back</span>
+                                <div>
+                                    <span class="fa fa-long-arrow-right"></span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    

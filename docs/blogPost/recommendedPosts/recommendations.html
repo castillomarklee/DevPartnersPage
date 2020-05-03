@@ -1,0 +1,53 @@
+<section class="{{'blog-recommendations' + class}}">
+    <h2>RECOMMENDED FOR YOU</h2>
+    <div class="list container-fluid">
+        <div class="row no-gutter flex" ng-if="recommendationsVM.recommendedPosts.items && recommendationsVM.recommendedPosts.items.length > 0">
+            <div class="col-md-12 col-lg-8">
+                <div class="row no-gutter flex left-to-right-layout" ng-if="recommendationsVM.recommendedPosts.items && recommendationsVM.recommendedPosts.items[0]">
+                    <div class="col-xs-12 col-md-6 cover">
+                        <div class="cover-img img-center-cropped-fill-parent">
+                            <img ng-src="{{recommendationsVM.recommendedPosts.items[0].coverImg}}" />
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 details-container">
+                        <div class="details">
+                            <h3><a ui-sref="{{STATES.VIEW_BLOG_POST}}({postId: recommendationsVM.recommendedPosts.items[0].id})">{{recommendationsVM.recommendedPosts.items[0].title}}</a></h3>
+                            <p>{{recommendationsVM.recommendedPosts.items[0].subTitle}}</p>
+                            <a ui-sref="{{STATES.VIEW_BLOG_POST}}({postId: recommendationsVM.recommendedPosts.items[0].id})" class="cta btn-link">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row no-gutter flex right-to-left-layout" ng-if="recommendationsVM.recommendedPosts.items && recommendationsVM.recommendedPosts.items[1]">
+                    <div class="col-xs-12 col-md-6 details-container">
+                        <div class="details">
+                            <h3><a ui-sref="{{STATES.VIEW_BLOG_POST}}({postId: recommendationsVM.recommendedPosts.items[1].id})">{{recommendationsVM.recommendedPosts.items[1].title}}</a></h3>
+                            <p>{{recommendationsVM.recommendedPosts.items[1].subTitle}}</p>
+                            <a ui-sref="{{STATES.VIEW_BLOG_POST}}({postId: recommendationsVM.recommendedPosts.items[1].id})" class="cta btn-link">Read More</a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 cover">
+                        <div class="cover-img img-center-cropped-fill-parent">
+                            <img ng-src="{{recommendationsVM.recommendedPosts.items[1].coverImg}}" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-4" ng-if="recommendationsVM.recommendedPosts.items && recommendationsVM.recommendedPosts.items[2]">
+                <div class="row no-gutter top-to-bottom-layout">
+                    <div class="col-sm-12 col-md-6 col-lg-12 cover">
+                        <div class="cover-img img-center-cropped-fill-parent">
+                            <img ng-src="{{recommendationsVM.recommendedPosts.items[2].coverImg}}" />
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-12 details-container">
+                        <div class="details">
+                            <h3><a ui-sref="{{STATES.VIEW_BLOG_POST}}({postId: recommendationsVM.recommendedPosts.items[2].id})">{{recommendationsVM.recommendedPosts.items[2].title}}</a></h3>
+                            <p>{{recommendationsVM.recommendedPosts.items[2].subTitle}}</p>
+                            <a ui-sref="{{STATES.VIEW_BLOG_POST}}({postId: recommendationsVM.recommendedPosts.items[2].id})" class="cta btn-link">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,109 @@
+<!-- <div id="video-content">
+    <center> -->
+<!-- <video id="video-player" autoplay="autoplay" style="width: 800px; height: 600px;">
+            <source ng-src="{{videoSrc}}" type="video/mp4">
+            <source ng-src="{{videoSrc}}" type="video/ogg"> Your browser does not support HTML5 video.
+        </video> -->
+<!-- <div id="player"></div> -->
+<!-- <iframe width="800" height="600" id="player" src="https://www.youtube.com/embed/usXGHRaWXOs?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1&amp;enablejsapi=1&amp;playerapiid=player" frameborder="0" allowfullscreen></iframe> -->
+
+
+
+<!-- <ng-youtube-embed 
+    video="videoID" 
+    autoplay="true"
+    color="white"
+    disablekb="true"
+    width="800"
+    height="600"
+    showinfo=false
+    controls=false
+    rel=false
+    videoid="videoID"
+    enablejsapi="true"
+    onready="playerReady"
+    onstatechange="playerStateChanged"></ng-youtube-embed>
+</center>
+</div> -->
+
+
+<style>
+    #player {
+        margin-top: 100px;
+    }
+
+    @media only screen and (max-width: 800px) {
+        .video-container {
+            position: relative;
+        }
+        .video-container iframe,
+        .video-container object,
+        .video-container embed {
+            width: 100%;
+        }
+        #main-content {
+            height: auto;
+        }
+    }
+</style>
+
+<center>
+    <div class="video-container">
+        <div id="player"></div>
+    </div>
+</center>
+
+<script src="https://www.youtube.com/player_api"></script>
+<script>
+    // create youtube player
+    var player;
+
+    function onYouTubePlayerAPIReady() {
+        player = new YT.Player('player', {
+            width: '800',
+            height: '600',
+            videoId: 'usXGHRaWXOs',
+            playerVars: {
+                'controls': 0,
+                'showinfo': 0,
+                'rel': 0
+            },
+            events: {
+                onReady: onPlayerReady,
+                onStateChange: onPlayerStateChange
+            }
+        });
+    }
+
+    // autoplay video
+    function onPlayerReady(event) {
+        event.target.playVideo();
+    }
+
+    // when video ends
+    function onPlayerStateChange(event) {
+        if (event.data === 0) {
+            location.href = '/#process';
+        }
+    }
+</script>
+
+
+<!-- Google Code for Adwords Conversion (Tracking Script) Conversion Page -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 871006878;
+    var google_conversion_label = "OBL7CMzA_n8QnoWqnwM";
+    var google_remarketing_only = false;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/871006878/?label=OBL7CMzA_n8QnoWqnwM&amp;guid=ON&amp;script=0"
+        />
+    </div>
+</noscript>
+
+</noscript>

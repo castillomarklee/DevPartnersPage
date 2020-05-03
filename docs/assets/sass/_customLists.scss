@@ -1,0 +1,66 @@
+ul.list-style-diamond {
+    li {
+        padding: $padding-small-vertical 0;
+        position: relative;
+        margin-left: 25px;
+        &::before {
+            @extend .bullet-diamond;
+            background-color: $yellow-gold;
+            position: absolute;
+            left: -20px;
+            top: 10px;
+        }
+    }
+
+    &.align-right {
+        text-align: right;
+        li {
+            margin-left: 0;
+            margin-right: 25px;
+            &::before {
+                right: -20px;
+                left: initial;
+            }
+        }
+    }
+}
+
+ul.list-horizontal {
+  text-align: center;
+  margin: 0 auto 1em !important;
+
+  > li {
+    display: inline-block;
+    margin: 0 !important;
+    padding: 0 7px 15px;
+  }
+
+  &.left {
+      text-align: left;
+  }
+  &.right {
+      text-align: right;
+  }
+}
+
+ol.list-style-int {
+    counter-reset: item;
+    li {
+        padding: $padding-small-vertical 0;
+        counter-increment: item;
+        &::before {
+            content: counter(item);
+            display: inline-block;
+            color: $yellow-gold;
+            margin-right: 10px;
+            font-weight: bolder;
+        }
+    }
+}
+
+ul.skills {
+    li {
+        padding: 5px 10px;
+        margin: 0 5px 5px !important;
+    }
+}

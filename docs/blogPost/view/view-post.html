@@ -1,0 +1,40 @@
+<div id="blog-post" class="blog-entry">
+  <article class="content">
+    <figure ng-if="postVM.entry.hasCoverPhoto()" class="cover-photo">
+      <div img-center-cropped-fill-parent>
+        <img ng-src="{{::postVM.entry.coverImg}}" />
+      </div>
+    </figure>
+
+    <div class="article-header constraints">
+      <h1> {{ ::postVM.entry.title }} </h1>
+      <div class="post-details">
+        <span class="label-yellow" ng-if="postVM.entry && postVM.entry.categoryName">{{postVM.entry.categoryName}}</span>
+        <span class="date" ng-if="postVM.entry && postVM.entry.datePublished">{{postVM.entry.datePublished | timeago}}</span>
+        <span ng-if="postVM.entry.author" class="author"><strong>Posted By:</strong> {{::postVM.entry.author}}</span>
+      </div>
+    </div>
+
+    <div class="article-body constraints" ng-include="postVM.entry.content"></div>
+
+    <div class="article-footer constraints">
+      <button class="btn-like" ng-click="postVM.entry.liked ? postVM.entry.unlike() : postVM.entry.like()" ng-class="{'active': postVM.entry.liked}"><span class="fa fa-heart"></span>I like and found this useful</button>
+      <span class="share-buttons">
+          Share this post:
+          <a share-via-facebook="postVM.entry.shareable"><i class="fa fa-facebook-f"></i></a>
+          <a share-via-twitter="postVM.entry.shareable"><i class="fa fa-twitter"></i></a>
+          <a share-via-linked-in="postVM.entry.shareable"><i class="fa fa-linkedin"></i></a>
+          <a share-via-email="postVM.entry.shareable"><i class="fa fa-envelope"></i></a>
+      </span>
+      <div class="next-prev-pager" ng-if="(postVM.entry.prevPost || postVM.entry.nextPost) && !postVM.entry.hideArrows">
+        <a ui-sref="{{STATES.VIEW_BLOG_POST}}({postId: postVM.entry.prevPost})" class="btn btn-previous" ng-class="{'invisible': !postVM.entry.prevPost}">PREV <span class="hidden-xs hidden-sm">POST</span></a>
+        <a ui-sref="{{STATES.VIEW_BLOG_POST}}({postId: postVM.entry.nextPost})" class="btn btn-next pull-right" ng-class="{'invisible': !postVM.entry.nextPost}">NEXT <span class="hidden-xs hidden-sm">POST</span></a>
+      </div>
+    </div>
+  </article>
+
+  <div class="blog-recommendations-container">
+    <blog-recommendations category="postVM.entry.category" excluded-post="postVM.entry.id" class="constraints" ng-if="!postVM.isLoadingContent">
+    </blog-recommendations>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<nav class="navbar navbar-default navbar-fixed-top" id="mainNav" ng-hide="hideNav">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+        aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button> -->
+      <a ng-show="hideNavMenus" class="navbar-brand">
+        <img src="assets/img/logos/devpartners-logo.png" alt="devpartners-logo">
+      </a>
+
+      <a ng-hide="hideNavMenus" class="navbar-brand" ui-sref="{{STATES.HOME}}">
+          <img src="assets/img/logos/devpartners-logo.png" alt="devpartners-logo">
+        </a>
+      <!-- Compact Menu Toggle -->
+      <a href id="c-button--push-right" class="compact-menu compact-menu-right c-button hidden-lg hidden-md hidden-sm pull-right" ng-hide="hideNavMenus">
+        <span class="fa fa-bars"></span>
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a ui-sref="{{STATES.OUR_PEOPLE}}" ng-hide="hideNavMenus" ng-class="{'active': topNavVM.isMenuItemActive(STATES.OUR_PEOPLE)}">Our Team</a>
+        </li>
+        <li>
+          <a ui-sref="{{STATES.DEVELOPERS}}" ng-hide="hideNavMenus" ng-class="{'active': topNavVM.isMenuItemActive(STATES.DEVELOPERS)}">Our Process</a>
+        </li>
+        <li>
+          <a ui-sref="{{STATES.WHY}}" ng-hide="hideNavMenus" ng-class="{'active': topNavVM.isMenuItemActive(STATES.WHY)}">Why</a>
+        </li>
+        <li>
+          <a ui-sref="{{STATES.BLOG}}" ng-hide="hideNavMenus" ng-class="{'active': topNavVM.isMenuItemActive(STATES.BLOG)}">Blog</a>
+        </li>
+        <li>
+          <a ng-hide="hideNavMenus" ng-click="topNavVM.openModalContactUs()">Contact Us</a>
+        </li>
+
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
